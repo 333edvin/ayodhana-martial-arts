@@ -48,9 +48,9 @@ export default function Trainers() {
     },
     {
       id: 4,
-      name: "Akhil kj",
-      role: "Head Coach, Ayodhana Fighters",
-      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
+      name: "Adhithyan pv",
+      role: "Assistant Coach",
+      description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
       image: "assets/images/trainer4.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
       featured: true
@@ -66,21 +66,21 @@ export default function Trainers() {
     },
     {
       id: 6,
-      name: "Nishak Tk",
-      role: "Senior Coach",
-      description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
+      name: "Akhil kj",
+      role: "Head Coach, Ayodhana Fighters",
+      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
       image: "assets/images/trainer6.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: false
+      featured: true
     },
     {
       id: 7,
-      name: "Adhithyan pv",
-      role: "Assistant Coach",
-      description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
+      name: "Nishak Tk",
+      role: "Senior Coach",
+      description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
       image: "assets/images/trainer7.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: true
+      featured: false
     },
     {
       id: 8,
