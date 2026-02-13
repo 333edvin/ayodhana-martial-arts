@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
+import Image from "next/image";
 
 export default function Layouts({ children }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +19,14 @@ export default function Layouts({ children }) {
     ];
     return (
         <>
-            <header className="fixed top-0 z-[100] w-full border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
-                <div className="container mx-auto flex h-14 items-center justify-between px-3">
+            <header className="fixed top-0 z-40 w-full border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
+                <div className="container mx-auto flex h-auto py-5 items-center justify-between px-3">
                     {/* LOGO */}
-                    <div className="text-xl   font-black tracking-tighter sm:text-2xl italic">
-                        AYODHANA<span className="text-red-600">FIGHTERS</span>
+                    <div className="text-xl  flex items-center gap-2 md:gap-5 font-black tracking-tighter sm:text-2xl italic">
+                        <Image width={50} height={50} src={'/assets/webp/AYODHANA.webp'} alt="logo" className="rounded-full"/>
+                        <p>
+                            AYODHANA<span className="text-red-600">FIGHTERS</span>
+                            </p>
                     </div>
 
                     {/* DESKTOP MENU */}

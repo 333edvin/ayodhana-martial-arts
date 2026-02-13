@@ -103,7 +103,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gray-900" id="testimonials">
+    <section className="relative py-24 overflow-hidden bg-gray-900 " id="testimonials">
       {/* Japanese/Martial Arts Pattern Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -182,7 +182,7 @@ export default function Testimonials() {
             </button>
 
             {/* Testimonial Card */}
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden rounded-2xl ">
               <div 
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}

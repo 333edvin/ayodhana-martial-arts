@@ -1,509 +1,266 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-const achievements = [
+// Event data structure
+const events = [
     {
         id: 1,
-        src: '/assets/images/achievements/achievement1.jpeg',
-        alt: 'Black Belt Ceremony 2024',
-        title: '🥋 Black Belt Ceremony 2024',
-        description: '15 students awarded black belt in annual ceremony'
+        name: '🥇 OXFORD PROFESSIONAL CHAMPIONSHIP - 2025',
+        shortDescription: 'Title belt champion - Abishek CR',
+        description: 'Abhishek CR emerged victorious at the Oxford Professional Championship 2025, claiming the prestigious FL Muay Thai Professional Title Belt. This championship victory showcases exceptional skill, dedication, and mastery in professional Muay Thai.',
+        mainImage: '/assets/images/event1/event1-1.jpeg',
+        images: [
+            { id: 1, src: '/assets/images/event1/event1-1.jpeg', alt: 'Black Belt Ceremony group photo' },
+            { id: 2, src: '/assets/images/event1/event1-2.jpeg', alt: 'Students receiving belts' },
+            { id: 3, src: '/assets/images/event1/event1-3.jpeg', alt: 'Certificates presentation' },
+            { id: 4, src: '/assets/images/event1/event1-4.jpeg', alt: 'Group celebration' },
+            { id: 5, src: '/assets/images/event1/event1-5.jpeg', alt: 'Group celebration' },
+            { id: 6, src: '/assets/images/event1/event1-6.jpeg', alt: 'Group celebration' },
+            { id: 7, src: '/assets/images/event1/event1-7.jpg', alt: 'Group celebration' },
+            { id: 8, src: '/assets/images/event1/event1-8.jpg', alt: 'Group celebration' },
+            { id: 9, src: '/assets/images/event1/event1-9.jpeg', alt: 'Group celebration' },
+            { id: 10, src: '/assets/images/event1/event1-10.jpeg', alt: 'Group celebration' },
+            { id: 11, src: '/assets/images/event1/event1-11.jpeg', alt: 'Group celebration' },
+            { id: 12, src: '/assets/images/event1/event1-12.jpeg', alt: 'Group celebration' },
+        ]
     },
     {
         id: 2,
-        src: '/assets/images/achievements/achievement2.jpeg',
-        alt: 'National Championship Victory',
-        title: '🏆 National Champions 2024',
-        description: 'Our team won 8 gold medals at National Championships'
-    },
-    {
-        id: 3,
-        src: '/assets/images/achievements/achievement3.jpg',
-        alt: 'International Tournament',
-        title: '🌏 International Achievement',
-        description: 'Represented India at Asian Martial Arts Games'
-    },
-    {
-        id: 4,
-        src: '/assets/images/achievements/achievement4.jpg',
-        alt: 'State Championship',
-        title: '🥇 State Champions',
-        description: 'First place at State Martial Arts Championship with 12 medals'
-    },
-    {
-        id: 5,
-        src: '/assets/images/achievements/achievement5.jpeg',
-        alt: 'Junior Black Belt',
-        title: '🌟 Junior Achievers',
-        description: '5 junior students earned their black belts'
-    },
-    {
-        id: 6,
-        src: '/assets/images/achievements/achievement6.jpeg',
-        alt: 'Self Defense Workshop',
-        title: '🤝 Community Outreach',
-        description: 'Free self-defense workshop for women conducted'
-    },
-    {
-        id: 7,
-        src: '/assets/images/achievements/achievement7.jpeg',
-        alt: 'Master Seminar',
-        title: '📚 Special Seminar',
-        description: 'Hosted Grand Master Lee for 3-day training seminar'
-    },
-    {
-        id: 8,
-        src: '/assets/images/achievements/achievement8.jpeg',
-        alt: 'Silver Medal Winners',
-        title: '🥈 Silver Medalists',
-        description: '6 silver medals won at Regional Championships'
-    },
-    {
-        id: 9,
-        src: '/assets/images/achievements/achievement9.jpeg',
-        alt: 'Bronze Medal Winners',
-        title: '🥉 Bronze Medalists',
-        description: '4 bronze medals at National Level Competition'
-    },
-    {
-        id: 10,
-        src: '/assets/images/achievements/achievement10.jpeg',
-        alt: 'Summer Camp 2024',
-        title: '🏕️ Summer Camp',
-        description: '50+ kids attended annual martial arts summer camp'
-    },
-    {
-        id: 11,
-        src: '/assets/images/achievements/achievement11.jpeg',
-        alt: 'Demonstration Event',
-        title: '🎪 Public Demonstration',
-        description: 'Performed at City Cultural Festival'
-    },
-    {
-        id: 12,
-        src: '/assets/images/achievements/achievement12.jpeg',
-        alt: 'Competition Team',
-        title: '🤼 Competition Team',
-        description: 'National team selection - 3 students selected'
-    },
-    {
-        id: 13,
-        src: '/assets/images/achievements/achievement13.jpeg',
-        alt: 'Special Awards',
-        title: '⭐ Special Recognition',
-        description: 'Best Martial Arts School Award 2024'
-    },
-    {
-        id: 14,
-        src: '/assets/images/achievements/achievement14.jpg',
-        alt: 'International Seminar',
-        title: '🌍 International Exchange',
-        description: 'Hosted students from Japan for cultural exchange'
-    },
-    {
-        id: 15,
-        src: '/assets/images/achievements/achievement15.jpeg',
-        alt: 'Charity Event',
-        title: '❤️ Charity Exhibition',
-        description: 'Raised funds for local children hospital'
-    },
-    {
-        id: 16,
-        src: '/assets/images/achievements/achievement16.jpeg',
-        alt: 'Instructor Training',
-        title: '👨‍🏫 Instructor Course',
-        description: '5 new certified instructors graduated'
-    },
-    {
-        id: 17,
-        src: '/assets/images/achievements/achievement17.jpeg',
-        alt: 'School Program',
-        title: '🏫 School Partnership',
-        description: 'Martial arts program started in 3 schools'
-    },
-    {
-        id: 18,
-        src: '/assets/images/achievements/achievement18.jpeg',
-        alt: 'Tournament Victory',
-        title: '🎯 Tournament Champions',
-        description: 'Overall champions at Inter-School Tournament'
-    },
-    {
-        id: 19,
-        src: '/assets/images/achievements/achievement19.jpeg',
-        alt: 'Annual Day Celebration',
-        title: '🎉 Annual Day 2024',
-        description: 'Grand celebration with 200+ students performing'
+        name: '🥊 PRIMAL Kick Boxing Title Belt Championship',
+        shortDescription: 'Title belt champion - Nishak TK',
+        description: 'Nishak TK demonstrated exceptional prowess at the PRIMAL Kick Boxing Championship, securing the prestigious title belt. This victory highlights the strength, technique, and determination of our champion in the competitive kick boxing arena.',
+        mainImage: '/assets/images/event2/event2-1.jpeg',
+        images: [
+            { id: 1, src: '/assets/images/event2/event2-1.jpeg', alt: 'Team photo with trophies' },
+            { id: 2, src: '/assets/images/event2/event2-2.jpeg', alt: 'Gold medal moments' },
+            { id: 3, src: '/assets/images/event2/event2-3.jpeg', alt: 'Competition action' },
+            { id: 4, src: '/assets/images/event2/event2-4.jpeg', alt: 'Award ceremony' },
+        ]
     }
 ]
 
-export default function Achivements() {
-    const firstRowRef = useRef(null)
-    const secondRowRef = useRef(null)
-    const [isPaused, setIsPaused] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false)
+export default function Achievements() {
+    const [selectedEvent, setSelectedEvent] = useState(null)
     const [selectedImage, setSelectedImage] = useState(null)
-    const [isButtonScrolling, setIsButtonScrolling] = useState(false)
-    const pauseTimeoutRef = useRef(null)
-    const animationRef = useRef(null)
-    const modalPauseTimeoutRef = useRef(null)
-    const buttonScrollTimeoutRef = useRef(null)
+    const [isEventModalOpen, setIsEventModalOpen] = useState(false)
+    const [isImageModalOpen, setIsImageModalOpen] = useState(false)
 
-    // Split achievements into two rows
-    const firstRowAchievements = achievements.slice(0, 10)
-    const secondRowAchievements = achievements.slice(10, 19)
-
-    // Duplicate achievements for seamless infinite scroll
-    const firstRowItems = [...firstRowAchievements, ...firstRowAchievements]
-    const secondRowItems = [...secondRowAchievements, ...secondRowAchievements]
-
-    // Auto-scroll logic
-    useEffect(() => {
-        const firstRow = firstRowRef.current
-        const secondRow = secondRowRef.current
-        if (!firstRow || !secondRow) return
-
-        let scrollPosition = 0
-        const scrollSpeed = 0.5
-
-        const scroll = () => {
-            if (!isPaused && !isModalOpen && !isButtonScrolling) {
-                scrollPosition += scrollSpeed
-
-                // Reset scroll position for infinite effect
-                if (scrollPosition >= firstRow.scrollWidth / 2) {
-                    scrollPosition = 0
-                }
-
-                firstRow.scrollLeft = scrollPosition
-                secondRow.scrollLeft = scrollPosition
-            }
-
-            animationRef.current = requestAnimationFrame(scroll)
-        }
-
-        animationRef.current = requestAnimationFrame(scroll)
-
-        return () => {
-            if (animationRef.current) {
-                cancelAnimationFrame(animationRef.current)
-            }
-        }
-    }, [isPaused, isModalOpen, isButtonScrolling])
-
-    const pauseAutoScroll = (duration = 10000) => {
-        // Clear existing timeout
-        if (pauseTimeoutRef.current) {
-            clearTimeout(pauseTimeoutRef.current)
-        }
-
-        // Pause scrolling
-        setIsPaused(true)
-
-        // Resume after specified duration
-        pauseTimeoutRef.current = setTimeout(() => {
-            setIsPaused(false)
-        }, duration)
-    }
-
-    const handleUserInteraction = () => {
-        pauseAutoScroll(10000) // Pause for 10 seconds
-    }
-
-    // Smooth scroll with animation
-    const smoothScroll = (element, targetPosition, duration = 800) => {
-        if (!element) return
-
-        const startPosition = element.scrollLeft
-        const distance = targetPosition - startPosition
-        const startTime = performance.now()
-
-        setIsButtonScrolling(true)
-
-        // Clear any existing button scroll timeout
-        if (buttonScrollTimeoutRef.current) {
-            clearTimeout(buttonScrollTimeoutRef.current)
-        }
-
-        const animateScroll = (currentTime) => {
-            const elapsed = currentTime - startTime
-            const progress = Math.min(elapsed / duration, 1)
-
-            // Easing function for smooth acceleration and deceleration
-            const easeInOutCubic = progress < 0.5
-                ? 4 * progress * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 3) / 2
-
-            const newPosition = startPosition + distance * easeInOutCubic
-
-            element.scrollLeft = newPosition
-
-            if (progress < 1) {
-                requestAnimationFrame(animateScroll)
-            } else {
-                // Ensure we end exactly at target position
-                element.scrollLeft = targetPosition
-                setIsButtonScrolling(false)
-            }
-        }
-
-        requestAnimationFrame(animateScroll)
-    }
-
-    // Scroll controls with smooth animation
-    const scroll = (direction) => {
-        if (firstRowRef.current && secondRowRef.current) {
-            const scrollAmount = direction === 'left' ? -300 : 300
-            const targetPosition = firstRowRef.current.scrollLeft + scrollAmount
-
-            // Smooth scroll both rows
-            smoothScroll(firstRowRef.current, targetPosition, 800)
-            smoothScroll(secondRowRef.current, targetPosition, 800)
-
-            // Pause auto-scroll for 10 seconds after button click
-            pauseAutoScroll(10000)
-
-            // Clear button scrolling flag after animation duration
-            buttonScrollTimeoutRef.current = setTimeout(() => {
-                setIsButtonScrolling(false)
-            }, 800)
+    // Open event modal
+    const openEventModal = (event) => {
+        setSelectedEvent(event)
+        setIsEventModalOpen(true)
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = 'hidden' // Prevent background scrolling
         }
     }
 
-    // Modal handlers
-    const openModal = (achievement) => {
-        setSelectedImage(achievement)
-        setIsModalOpen(true)
-        // Clear any existing modal timeout
-        if (modalPauseTimeoutRef.current) {
-            clearTimeout(modalPauseTimeoutRef.current)
+    // Close event modal
+    const closeEventModal = () => {
+        setIsEventModalOpen(false)
+        setSelectedEvent(null)
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = 'unset'
         }
     }
 
-    const closeModal = () => {
-        setIsModalOpen(false)
-        // After closing modal, wait 5 seconds before resuming auto-scroll
-        modalPauseTimeoutRef.current = setTimeout(() => {
-            setIsPaused(false)
-        }, 5000)
+    // Open image modal from within event modal
+    const openImageModal = (image, eventName) => {
+        setSelectedImage({ ...image, eventName })
+        setIsImageModalOpen(true)
     }
 
-    // Cleanup timeouts on unmount
-    useEffect(() => {
-        return () => {
-            if (pauseTimeoutRef.current) {
-                clearTimeout(pauseTimeoutRef.current)
-            }
-            if (modalPauseTimeoutRef.current) {
-                clearTimeout(modalPauseTimeoutRef.current)
-            }
-            if (buttonScrollTimeoutRef.current) {
-                clearTimeout(buttonScrollTimeoutRef.current)
-            }
-        }
-    }, [])
+    // Close image modal
+    const closeImageModal = () => {
+        setIsImageModalOpen(false)
+        setSelectedImage(null)
+    }
 
-    // Keyboard navigation for modal
+    // Handle escape key for both modals - FIXED: Added window check
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (isModalOpen && e.key === 'Escape') {
-                closeModal()
+            if (e.key === 'Escape') {
+                if (isImageModalOpen) {
+                    closeImageModal()
+                } else if (isEventModalOpen) {
+                    closeEventModal()
+                }
             }
         }
 
-        window.addEventListener('keydown', handleKeyDown)
-        return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [isModalOpen])
-
-    // If no images are available, show a message
-    if (achievements.length === 0) {
-        return (
-            <section className="py-16 bg-gray-50" id="programs">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Achievements</h2>
-                    <p className="text-gray-600">Achievements will be added soon.</p>
-                </div>
-            </section>
-        )
-    }
+        // Check if window is defined (client-side only)
+        if (typeof window !== 'undefined') {
+            window.addEventListener('keydown', handleKeyDown)
+            return () => window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [isEventModalOpen, isImageModalOpen])
 
     return (
         <>
-            <section className="py-16 bg-gray-50 overflow-hidden" id="programs">
+            <section className="py-16 bg-gradient-to-b from-gray-50 to-white" id="achievements">
                 <div className="container mx-auto px-4">
+                    {/* Section Header */}
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Achievements</h2>
-                        <p className="text-sm md:text-xl text-gray-600">Celebrating 19 remarkable milestones in martial arts excellence</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                            Our <span className="text-red-600">Achievements</span>
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Celebrating our milestones and memorable moments in martial arts excellence
+                        </p>
                     </div>
 
-                    <div className="relative">
-                        {/* Navigation Buttons */}
-                        <button
-                            onClick={() => scroll('left')}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                            aria-label="Previous"
-                            disabled={isButtonScrolling}
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
+                    {/* Events Grid - 2 Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        {events.map((event) => (
+                            <div
+                                key={event.id}
+                                onClick={() => openEventModal(event)}
+                                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                            >
+                                {/* Event Image */}
+                                <div className="relative h-64 w-full overflow-hidden">
+                                    <Image
+                                        src={event.mainImage}
+                                        alt={event.name}
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                        <button
-                            onClick={() => scroll('right')}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                            aria-label="Next"
-                            disabled={isButtonScrolling}
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-
-                        {/* First Row */}
-                        <div
-                            ref={firstRowRef}
-                            className="flex overflow-x-auto scrollbar-hide mb-4 cursor-pointer"
-                            style={{
-                                scrollbarWidth: 'none',
-                                msOverflowStyle: 'none',
-                                WebkitOverflowScrolling: 'touch',
-                                scrollBehavior: 'auto' // Disable native smooth scroll to use custom animation
-                            }}
-                            onMouseEnter={handleUserInteraction}
-                            onTouchStart={handleUserInteraction}
-                        >
-                            <div className="flex gap-4 py-2">
-                                {firstRowItems.map((achievement, index) => (
-                                    <div
-                                        key={`row1-${achievement.id}-${index}`}
-                                        onClick={() => openModal(achievement)}
-                                        className="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
-                                    >
-                                        <div className="relative h-40 w-full bg-gray-200">
-                                            <Image
-                                                src={achievement.src}
-                                                alt={achievement.alt}
-                                                fill
-                                                className="object-cover group-hover:opacity-90 transition-opacity "
-                                                sizes="(max-width: 768px) 100vw, 256px"
-                                                onError={(e) => {
-                                                    e.target.style.display = 'none';
-                                                }}
-                                            />
-                                        </div>
-                                        {/* <div className="p-3 text-center">
-                                            <p className="text-sm font-semibold text-gray-800">{achievement.title}</p>
-                                        </div> */}
+                                    {/* Event Name Overlay */}
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h3 className="text-2xl font-bold text-white mb-2">{event.name}</h3>
+                                        <p className="text-white/90 text-sm">{event.shortDescription}</p>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
+                                </div>
 
-                        {/* Second Row */}
-                        <div
-                            ref={secondRowRef}
-                            className="flex overflow-x-auto scrollbar-hide cursor-pointer"
-                            style={{
-                                scrollbarWidth: 'none',
-                                msOverflowStyle: 'none',
-                                WebkitOverflowScrolling: 'touch',
-                                scrollBehavior: 'auto' // Disable native smooth scroll to use custom animation
-                            }}
-                            onMouseEnter={handleUserInteraction}
-                            onTouchStart={handleUserInteraction}
-                        >
-                            <div className="flex gap-4 py-2">
-                                {secondRowItems.map((achievement, index) => (
-                                    <div
-                                        key={`row2-${achievement.id}-${index}`}
-                                        onClick={() => openModal(achievement)}
-                                        className="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
-                                    >
-                                        <div className="relative h-40 w-full bg-gray-200">
-                                            <Image
-                                                src={achievement.src}
-                                                alt={achievement.alt}
-                                                fill
-                                                className="object-cover group-hover:opacity-90 transition-opacity"
-                                                sizes="(max-width: 768px) 100vw, 256px"
-                                                onError={(e) => {
-                                                    e.target.style.display = 'none';
-                                                }}
-                                            />
-                                        </div>
-                                        {/* <div className="p-3 text-center">
-                                            <p className="text-sm font-semibold text-gray-800">{achievement.title}</p>
-                                        </div> */}
+                                {/* Quick Stats */}
+                                <div className="p-6">
+                                    <div className="flex items-center justify-between text-sm text-gray-600">
+                                        <span className="flex items-center gap-1">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                            {event.images.length} photos
+                                        </span>
+                                        <span className="text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                                            View Details →
+                                        </span>
                                     </div>
-                                ))}
+                                </div>
                             </div>
-                        </div>
-
-                        {/* Gradient Overlays */}
-                        <div className="absolute top-0 left-0 w-8 md:w-24 h-full bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10"></div>
-                        <div className="absolute top-0 right-0 w-8 md:w-24 h-full bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10"></div>
+                        ))}
                     </div>
-
-                    {/* Status Indicators */}
-                    {/* <div className="flex justify-center items-center gap-4 mt-6">
-                        {isButtonScrolling && (
-                            <div className="text-blue-600 animate-pulse">
-                                <span className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full shadow-md">
-                                    <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                    </svg>
-                                    Smooth scrolling...
-                                </span>
-                            </div>
-                        )}
-
-                        {isPaused && !isModalOpen && !isButtonScrolling && (
-                            <div className="text-gray-600 animate-pulse">
-                                <span className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6" />
-                                    </svg>
-                                    Auto-scroll paused - will resume shortly
-                                </span>
-                            </div>
-                        )}
-
-                        {isModalOpen && (
-                            <div className="text-blue-600 animate-pulse">
-                                <span className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full shadow-md">
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    Auto-scroll paused - viewing achievement
-                                </span>
-                            </div>
-                        )}
-                    </div> */}
                 </div>
-
-                <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
             </section>
 
-            {/* Modal */}
-            {isModalOpen && selectedImage && (
+            {/* Event Details Modal */}
+            {isEventModalOpen && selectedEvent && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-                    onClick={closeModal}
+                    onClick={closeEventModal}
                 >
                     <div
-                        className="relative max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 scale-100"
+                        className="relative max-w-4xl w-full max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close Button */}
                         <button
-                            onClick={closeModal}
+                            onClick={closeEventModal}
+                            className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-gray-800 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="Close"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Scrollable Content */}
+                        <div className="overflow-y-auto max-h-[90vh]">
+                            {/* Event Header Image */}
+                            <div className="relative h-72 w-full">
+                                <Image
+                                    src={selectedEvent.mainImage}
+                                    alt={selectedEvent.name}
+                                    fill
+                                    className="object-[center_35%] object-cover"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                                {/* Event Title */}
+                                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+                                    <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
+                                        {selectedEvent.name}
+                                    </h2>
+                                    <p className="text-white/90 text-sm md:text-lg">
+                                        {selectedEvent.shortDescription}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Event Details */}
+                            <div className=" p-4 md:p-8">
+                                {/* Description */}
+                                <div className="mb-8">
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">About this Event</h3>
+                                    <p className="text-gray-600 leading-relaxed text-xs md:text-sm">
+                                        {selectedEvent.description}
+                                    </p>
+                                </div>
+
+                                {/* Photo Gallery */}
+                                <div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Event Gallery</h3>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+                                        {selectedEvent.images.map((image) => (
+                                            <div
+                                                key={image.id}
+                                                onClick={() => openImageModal(image, selectedEvent.name)}
+                                                className="relative w-38 h-38 md:w-48 md:h-48 rounded-lg overflow-hidden cursor-pointer group/image flex-shrink-0"
+                                            >
+                                                <Image
+                                                    src={image.src}
+                                                    alt={image.alt}
+                                                    fill
+                                                    className="object-cover group-hover/image:scale-110 transition-transform duration-500"
+                                                />
+                                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Navigation Info */}
+                                <div className="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between text-sm text-gray-500">
+                                    <span>Event {selectedEvent.id} of {events.length}</span>
+                                    <span>Click on images to enlarge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Image Viewer Modal */}
+            {isImageModalOpen && selectedImage && (
+                <div
+                    className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/95"
+                    onClick={closeImageModal}
+                >
+                    <div
+                        className="relative max-w-6xl w-full h-[90vh]"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={closeImageModal}
                             className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-gray-800 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                             aria-label="Close"
                         >
@@ -513,27 +270,29 @@ export default function Achivements() {
                         </button>
 
                         {/* Image Container */}
-                        <div className="relative h-[60vh] w-full bg-gray-100">
+                        <div className="relative w-full h-full flex items-center justify-center">
                             <Image
                                 src={selectedImage.src}
                                 alt={selectedImage.alt}
                                 fill
                                 className="object-contain"
-                                sizes="(max-width: 1280px) 100vw, 1280px"
+                                sizes="100vw"
                                 priority
                             />
                         </div>
 
-                        {/* Image Details */}
-                        <div className="p-6 bg-white">
-                            {/* <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedImage.title}</h3> */}
-                            {/* <p className="text-gray-600">{selectedImage.description}</p> */}
+                        {/* Image Info */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                            <p className="text-white text-lg font-semibold">{selectedImage.eventName}</p>
+                            <p className="text-white/80 text-sm mt-1">{selectedImage.alt}</p>
+                        </div>
 
-                            {/* Navigation Info */}
-                            <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
-                                <span>Image {selectedImage.id} of {achievements.length}</span>
-                                <span>Click outside or press ESC to close</span>
-                            </div>
+                        {/* Navigation Hint */}
+                        <div className="absolute top-1/2 left-4 -translate-y-1/2 text-white/50 text-sm hidden md:block">
+                            ←
+                        </div>
+                        <div className="absolute top-1/2 right-4 -translate-y-1/2 text-white/50 text-sm hidden md:block">
+                            →
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Founder() {
     return (
-        <section className="container mx-auto py-10 px-5 my-20">
+        <section className="container mx-auto py-10 px-5 my-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Column: The Image Stack */}
                 <div className="relative flex flex-col items-center justify-center">
@@ -10,18 +10,18 @@ export default function Founder() {
                     {/* Background Images Wrapper */}
                     <div className="flex flex-col gap-3 w-full">
                         <Image
-                            src='/assets/images/founder1.jpeg'
+                            src='/assets/images/founder2.jpg'
                             alt="background top"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
                         />
                         <Image
-                            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIzCOZHqqwZoYPAmzbe9Wxo4BkJF8ya5QVQ&s'
+                            src='/assets/images/founder1.jpeg'
                             alt="background bottom"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
                         />
                     </div>
 
@@ -40,12 +40,12 @@ export default function Founder() {
                 {/* Right Column: Text Content */}
                 <div className="flex flex-col space-y-6">
                     <div>
-                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">Meet the Visionary</span>
+                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">The Founder</span>
                         <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mt-2">
-                            The Founder
+                           Shihan sreejith
                         </h2>
                         <h3 className="text-2xl font-semibold text-gray-700 mt-2">
-                            Ayodhana Martial Arts Association India
+                            Ayodhana Martial Arts 
                         </h3>
                     </div>
 
@@ -68,7 +68,7 @@ export default function Founder() {
                         </ul>
 
                         <div className="border-l-4 border-red-600 pl-4 py-2 mt-6 bg-gray-50">
-                            <p className="text-gray-800 font-medium leading-relaxed">
+                            <p className="text-xs md:text-sm text-gray-800 font-medium leading-relaxed">
                                 National Chief Instructor & Examiner. As the Founder and Director of Ayodhana, he is dedicated to the discipline, growth, and excellence of martial arts in India.
                             </p>
                         </div>
