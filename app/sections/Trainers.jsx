@@ -1,7 +1,24 @@
 'use client'
+import { useState, useEffect } from 'react';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
 export default function Trainers() {
-   const trainers = [
+  const [flippedCards, setFlippedCards] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const trainers = [
     {
       id: 1,
       name: "Anil babu",
@@ -75,63 +92,161 @@ export default function Trainers() {
       featured: false
     }
   ];
-    return (
-       <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
-          <div className=" mx-auto">
-            <div className="section-title text-center mb-10 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600">Learn from certified martial arts instructors</p>
-            </div>
 
-            <div className="flex justify-center">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-[360px] md:w-6xl">
-                {trainers.map((trainer) => (
-                  <div key={trainer.id} className="group [perspective:1000px] flex justify-center">
-                    <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[500px] transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+  const handleCardClick = (id) => {
+    if (isMobile) {
+      setFlippedCards(prev => ({
+        ...prev,
+        [id]: !prev[id]
+      }));
+    }
+  };
 
-                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] trainer-card">
-                        <img
-                          src={trainer.image}
-                          alt={trainer.name}
-                          className="h-full w-full object-cover rounded-xl trainer-img"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-xl flex flex-col justify-end p-6 black-hover">
-                          <h3 className="text-center text-white text-2xl font-bold">{trainer.name}</h3>
-                        </div>
-                      </div>
+  const handleMouseEnter = (id) => {
+    if (!isMobile) {
+      setFlippedCards(prev => ({
+        ...prev,
+        [id]: true
+      }));
+    }
+  };
 
-                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 shadow-2xl trainer-card">
-                        <div className="flex flex-col h-full justify-center items-center text-center p-4 sm:p-6 md:p-8">
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl text-white uppercase font-bold mb-2">
-                            {trainer.name}
-                          </h3>
-                          <span className="text-red-400 text-sm sm:text-base font-semibold block mb-3 uppercase tracking-wider">
-                            {trainer.role}
-                          </span>
-                          <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mb-6 line-clamp-4 md:line-clamp-6">
-                            {trainer.description}
-                          </p>
+  const handleMouseLeave = (id) => {
+    if (!isMobile) {
+      setFlippedCards(prev => ({
+        ...prev,
+        [id]: false
+      }));
+    }
+  };
 
-                          <div className="flex gap-4">
-                            <a href={trainer.socials.facebook} className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full" aria-label="Facebook">
-                              <FaFacebookF className="text-lg md:text-xl" />
-                            </a>
-                            <a href={trainer.socials.instagram} className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full" aria-label="Instagram">
-                              <FaInstagram className="text-lg md:text-xl" />
-                            </a>
-                            <a href={trainer.socials.twitter} className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full" aria-label="Twitter">
-                              <FaWhatsapp className="text-lg md:text-xl" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+  return (
+    <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
+      <div className="mx-auto">
+        <div className="section-title text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">Learn from certified martial arts instructors</p>
+        </div>
 
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-[360px] md:w-6xl">
+            {trainers.map((trainer) => (
+              <div 
+                key={trainer.id} 
+                className="group [perspective:1000px] flex justify-center"
+                onClick={() => handleCardClick(trainer.id)}
+                onMouseEnter={() => handleMouseEnter(trainer.id)}
+                onMouseLeave={() => handleMouseLeave(trainer.id)}
+              >
+                <div 
+                  className={`relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[500px] transition-all duration-500 [transform-style:preserve-3d] ${
+                    flippedCards[trainer.id] ? '[transform:rotateY(180deg)]' : ''
+                  }`}
+                >
+                  {/* Front of card */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] trainer-card">
+                    <img
+                      src={trainer.image}
+                      alt={trainer.name}
+                      className="h-full w-full object-cover rounded-xl trainer-img"
+                    />
+                    <div className="absolute inset-0 text-center text-white bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-xl flex flex-col justify-end p-2 md:p-6 pb-5 md:pb-10 black-hover">
+                      <h3 className="text-center text-lg md:text-2xl font-bold">{trainer.name}</h3>
+                      <p className='text-xs md:text-[15px] text-red-400 md:text-red-500 font-bold'>{trainer.role}</p>
                     </div>
                   </div>
-                ))}
+
+                  {/* Back of card with shine effect */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 shadow-2xl trainer-card overflow-hidden">
+                    {/* Shine overlay - fixed animation */}
+                    <div className="absolute inset-0 w-full h-full shine-overlay group-hover:opacity-40"></div>
+                    
+                    <div className="flex flex-col h-full justify-center items-center text-center p-4 sm:p-6 md:p-8 relative z-10">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl text-white uppercase font-bold mb-2">
+                        {trainer.name}
+                      </h3>
+                      <span className="text-red-400 text-sm sm:text-base hidden md:block font-semibold block mb-3 uppercase tracking-wider">
+                        {trainer.role}
+                      </span>
+                      <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mb-6 line-clamp-4 md:line-clamp-6">
+                        {trainer.description}
+                      </p>
+
+                      <div className="flex gap-1 md:gap-4">
+                        <a 
+                          href={trainer.socials.facebook} 
+                          className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
+                          aria-label="Facebook"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaFacebookF className="text-lg md:text-xl" />
+                        </a>
+                        <a 
+                          href={trainer.socials.instagram} 
+                          className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
+                          aria-label="Instagram"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaInstagram className="text-lg md:text-xl" />
+                        </a>
+                        <a 
+                          href={trainer.socials.twitter} 
+                          className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
+                          aria-label="WhatsApp"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaWhatsapp className="text-lg md:text-xl" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-    );
+        </div>
+      </div>
+
+      <style jsx global>{`
+        .shine-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            115deg,
+            transparent 0%,
+            transparent 25%,
+            rgba(255, 255, 255, 0.3) 35%,
+            rgba(255, 255, 255, 0.5) 45%,
+            rgba(255, 255, 255, 0.3) 55%,
+            transparent 65%,
+            transparent 100%
+          );
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+          animation: shine 2.5s infinite;
+          transform: translateX(-100%) translateY(-100%);
+        }
+        
+        .group:hover .shine-overlay {
+          opacity: 0.5;
+        }
+        
+        @keyframes shine {
+          0% {
+            transform: translateX(-100%) translateY(-100%);
+          }
+          20% {
+            transform: translateX(-100%) translateY(-100%);
+          }
+          100% {
+            transform: translateX(200%) translateY(200%);
+          }
+        }
+      `}</style>
+    </section>
+  );
 }

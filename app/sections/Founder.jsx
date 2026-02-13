@@ -10,11 +10,11 @@ export default function Founder() {
                     {/* Background Images Wrapper */}
                     <div className="flex flex-col gap-3 w-full">
                         <Image
-                            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx3ws64GUSe0RwsKlRI-XTuozfHNvu3g9xs2J6fFpFWHMJZJrjUvBr4yD0I3Q67QoZFXI&usqp=CAU'
+                            src='/assets/images/founder1.jpeg'
                             alt="background top"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_40%]"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
                         />
                         <Image
                             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIzCOZHqqwZoYPAmzbe9Wxo4BkJF8ya5QVQ&s'

@@ -40,10 +40,10 @@ export default function Stats() {
                 // Only trigger if visible and hasn't animated yet
                 if (entry.isIntersecting && !hasAnimated) {
                     setHasAnimated(true);
-                    animateValue('stat1', 0, 1200, 2500);
-                    animateValue('stat2', 0, 15, 2000);
+                    animateValue('stat1', 0, 250, 2500);
+                    animateValue('stat2', 0, 7, 2000);
                     animateValue('stat3', 0, 9, 2000);
-                    animateValue('stat4', 0, 6, 1500);
+                    animateValue('stat4', 0, 4, 1500);
                 }
             },
             { threshold: 0.3 } // Trigger when 30% of the section is visible

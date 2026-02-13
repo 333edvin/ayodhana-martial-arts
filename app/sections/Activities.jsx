@@ -15,21 +15,38 @@ export default function Activities() {
     const scrollRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
+    const pauseTimeoutRef = useRef(null);
 
     const scrollOneItem = (direction) => {
         if (scrollRef.current) {
             const container = scrollRef.current;
-            // Height of card + gap (24px)
             const itemHeight = container.firstChild.offsetHeight + 24;
             const scrollAmount = direction === 'down' ? itemHeight : -itemHeight;
             container.scrollBy({ top: scrollAmount, behavior: 'smooth' });
         }
     };
 
+    const manualScroll = (direction) => {
+        scrollOneItem(direction);
+        
+        // Pause auto-scroll
+        setIsAutoScrollPaused(true);
+        
+        // Clear any existing timeout
+        if (pauseTimeoutRef.current) {
+            clearTimeout(pauseTimeoutRef.current);
+        }
+        
+        // Resume auto-scroll after 10 seconds
+        pauseTimeoutRef.current = setTimeout(() => {
+            setIsAutoScrollPaused(false);
+        }, 10000);
+    };
+
     useEffect(() => {
         const observerOptions = {
             root: scrollRef.current,
-            // Trigger when the card passes through the center "strip" of the container
             threshold: 0.8,
         };
 
@@ -47,8 +64,11 @@ export default function Activities() {
     }, []);
 
     useEffect(() => {
+        // Don't set up auto-scroll if paused or hovered
+        if (isAutoScrollPaused || isHovered) return;
+
         const autoScroll = setInterval(() => {
-            if (!isHovered && scrollRef.current) {
+            if (scrollRef.current) {
                 const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
                 if (scrollTop + clientHeight >= scrollHeight - 20) {
                     scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,9 +76,19 @@ export default function Activities() {
                     scrollOneItem('down');
                 }
             }
-        }, 5000);
+        }, 3000); // 3 seconds auto-scroll
+
         return () => clearInterval(autoScroll);
-    }, [isHovered]);
+    }, [isAutoScrollPaused, isHovered]);
+
+    // Cleanup timeout on unmount
+    useEffect(() => {
+        return () => {
+            if (pauseTimeoutRef.current) {
+                clearTimeout(pauseTimeoutRef.current);
+            }
+        };
+    }, []);
 
     return (
         <section className="bg-black py-10 md:py-10 px-5 min-h-screen flex items-center overflow-hidden">
@@ -71,10 +101,16 @@ export default function Activities() {
 
                     <div className="flex items-center gap-6 mt-10">
                         <div className="flex gap-2">
-                            <button onClick={() => scrollOneItem('up')} className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all">
+                            <button 
+                                onClick={() => manualScroll('up')} 
+                                className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all"
+                            >
                                 <span className="rotate-180 block text-2xl">↓</span>
                             </button>
-                            <button onClick={() => scrollOneItem('down')} className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all">
+                            <button 
+                                onClick={() => manualScroll('down')} 
+                                className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all"
+                            >
                                 <span className="text-2xl">↓</span>
                             </button>
                         </div>
@@ -86,7 +122,7 @@ export default function Activities() {
                     </div>
                 </div>
 
-                {/* The Scroller: Specifically Sized for 1/3 Overlap */}
+                {/* The Scroller */}
                 <div
                     className="relative h-[450px] md:h-[650px] w-full mask-fade-edges flex items-center"
                     onMouseEnter={() => setIsHovered(true)}
@@ -95,15 +131,13 @@ export default function Activities() {
                     <div
                         ref={scrollRef}
                         className="flex flex-col gap-6 h-full w-full overflow-hidden py-[60px] md:py-[130px]"
-                    /* py-[130px] adds padding so the first/last cards can sit in the center */
                     >
                         {activities.map((item, index) => (
                             <div
                                 key={index}
                                 data-index={index}
-                                className="activity-card shrink-0 relative w-full h-[380px] rounded-2xl overflow-hidden border border-white/5 transition-all duration-700 "
+                                className="activity-card shrink-0 relative w-full h-[380px] rounded-2xl overflow-hidden border border-white/5 transition-all duration-700"
                                 style={{
-                                    // Visual scaling to emphasize the center card
                                     transform: activeIndex === index ? 'scale(1)' : 'scale(0.9)',
                                     opacity: activeIndex === index ? 1 : 0.4
                                 }}
@@ -111,7 +145,7 @@ export default function Activities() {
                                 <img
                                     src={item.img}
                                     alt={item.title}
-                                    className={`absolute inset-0 w-full  h-full object-cover transition-all duration-1000 
+                                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 
                                         ${activeIndex === index ? 'grayscale-0' : 'grayscale'}
                                     `}
                                 />
