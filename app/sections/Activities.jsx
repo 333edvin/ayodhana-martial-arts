@@ -16,6 +16,7 @@ export default function Activities() {
     const [isHovered, setIsHovered] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
+    const [viewMode, setViewMode] = useState('scroller');
     const pauseTimeoutRef = useRef(null);
 
     const scrollOneItem = (direction) => {
@@ -29,27 +30,16 @@ export default function Activities() {
 
     const manualScroll = (direction) => {
         scrollOneItem(direction);
-        
-        // Pause auto-scroll
         setIsAutoScrollPaused(true);
-        
-        // Clear any existing timeout
-        if (pauseTimeoutRef.current) {
-            clearTimeout(pauseTimeoutRef.current);
-        }
-        
-        // Resume auto-scroll after 10 seconds
+        if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
         pauseTimeoutRef.current = setTimeout(() => {
             setIsAutoScrollPaused(false);
         }, 10000);
     };
 
     useEffect(() => {
-        const observerOptions = {
-            root: scrollRef.current,
-            threshold: 0.8,
-        };
-
+        if (viewMode === 'grid') return;
+        const observerOptions = { root: scrollRef.current, threshold: 0.8 };
         const observerCallback = (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -57,16 +47,13 @@ export default function Activities() {
                 }
             });
         };
-
         const observer = new IntersectionObserver(observerCallback, observerOptions);
         document.querySelectorAll('.activity-card').forEach((card) => observer.observe(card));
         return () => observer.disconnect();
-    }, []);
+    }, [viewMode]);
 
     useEffect(() => {
-        // Don't set up auto-scroll if paused or hovered
-        if (isAutoScrollPaused || isHovered) return;
-
+        if (isAutoScrollPaused || isHovered || viewMode === 'grid') return;
         const autoScroll = setInterval(() => {
             if (scrollRef.current) {
                 const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
@@ -76,45 +63,46 @@ export default function Activities() {
                     scrollOneItem('down');
                 }
             }
-        }, 3000); // 3 seconds auto-scroll
-
+        }, 3000);
         return () => clearInterval(autoScroll);
-    }, [isAutoScrollPaused, isHovered]);
+    }, [isAutoScrollPaused, isHovered, viewMode]);
 
-    // Cleanup timeout on unmount
     useEffect(() => {
-        return () => {
-            if (pauseTimeoutRef.current) {
-                clearTimeout(pauseTimeoutRef.current);
-            }
-        };
+        return () => { if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current); };
     }, []);
 
     return (
-        <section className="bg-black py-10 md:py-10 px-5 min-h-screen flex items-center overflow-hidden">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
+        <section className="bg-black py-20 px-5 min-h-screen flex items-start justify-center overflow-x-hidden transition-all duration-700" id='programs'>
+            {/* Main Wrapper */}
+            <div className={`container mx-auto transition-all duration-1000 flex  ${viewMode === 'grid' ? 'flex-col max-w-7xl' : 'flex-col md:flex-row'}`}>
 
-                {/* Content side */}
-                <div className="z-10">
+                {/* 1. Header Section - Takes Full Width when Grid */}
+
+                <div className={`transition-all duration-1000 flex flex-col  ${viewMode === 'grid' ? 'items-center text-center' : 'items-start text-left'}`}>
                     <h2 className="text-red-600 font-bold tracking-widest uppercase text-sm mb-3">Training Programs</h2>
-                    <h3 className="text-5xl md:text-8xl font-black text-white uppercase leading-none mb-6 italic">Master Every <br /> Discipline</h3>
+                    <h3 className={`font-black text-white uppercase leading-none italic transition-all duration-1000 ${viewMode === 'grid' ? 'text-5xl md:text-8xl mb-8' : 'text-5xl md:text-8xl mb-6'}`}>
+                        Master Every <br /> Discipline
+                    </h3>
 
-                    <div className="flex items-center gap-6 mt-10">
+                    <button
+                        onClick={() => setViewMode(viewMode === 'scroller' ? 'grid' : 'scroller')}
+                        className="px-8 py-3 border border-white/20 text-white uppercase tracking-widest text-xs hover:bg-red-600 transition-all font-bold mb-6"
+                    >
+                        {viewMode === 'scroller' ? 'View All Activities' : 'Back'}
+                    </button>
+
+                    {/* WRAP THE ENTIRE NAV GROUP HERE */}
+                    <div className={`flex items-center gap-4 transition-all duration-700 ${viewMode === 'grid' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                         <div className="flex gap-2">
-                            <button 
-                                onClick={() => manualScroll('up')} 
-                                className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all"
-                            >
+                            <button onClick={() => manualScroll('up')} className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all">
                                 <span className="rotate-180 block text-2xl">↓</span>
                             </button>
-                            <button 
-                                onClick={() => manualScroll('down')} 
-                                className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all"
-                            >
+                            <button onClick={() => manualScroll('down')} className="w-14 h-14 flex items-center justify-center border border-white/20 text-white hover:bg-red-600 transition-all">
                                 <span className="text-2xl">↓</span>
                             </button>
                         </div>
-                        <div className="text-2xl font-mono text-white tracking-tighter italic">
+
+                        <div className="text-2xl font-mono text-white tracking-tighter italic ml-2">
                             <span className="text-red-600 font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
                             <span className="mx-2 opacity-20">/</span>
                             <span className="opacity-40">{String(activities.length).padStart(2, '0')}</span>
@@ -122,57 +110,68 @@ export default function Activities() {
                     </div>
                 </div>
 
-                {/* The Scroller */}
-                <div
-                    className="relative h-[450px] md:h-[650px] w-full mask-fade-edges flex items-center"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    <div
-                        ref={scrollRef}
-                        className="flex flex-col gap-6 h-full w-full overflow-hidden py-[60px] md:py-[130px]"
-                    >
-                        {activities.map((item, index) => (
-                            <div
-                                key={index}
-                                data-index={index}
-                                className="activity-card shrink-0 relative w-full h-[380px] rounded-2xl overflow-hidden border border-white/5 transition-all duration-700"
-                                style={{
-                                    transform: activeIndex === index ? 'scale(1)' : 'scale(0.9)',
-                                    opacity: activeIndex === index ? 1 : 0.4
-                                }}
-                            >
-                                <img
-                                    src={item.img}
-                                    alt={item.title}
-                                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 
-                                        ${activeIndex === index ? 'grayscale-0' : 'grayscale'}
-                                    `}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent opacity-90" />
+                {/* 2. Content Layout */}
+                <div className={`transition-all duration-1000 w-3xl ${viewMode === 'grid' ? 'w-full' : '  items-center'}`}>
 
-                                <div className="absolute bottom-8 left-8 p-4">
-                                    <h4 className={`text-4xl font-black uppercase italic tracking-tighter transition-all duration-500 
-                                        ${activeIndex === index ? 'text-white' : 'text-gray-500'}
-                                    `}>
-                                        {item.title}
-                                    </h4>
-                                    <p className={`text-gray-300 text-sm max-w-[280px] mt-2 transition-all duration-700
-                                        ${activeIndex === index ? 'opacity-100' : 'opacity-0'}
-                                    `}>
-                                        {item.desc}
-                                    </p>
+
+                    {/* Right Side: The Cards */}
+                    <div className={`relative transition-all  duration-1000 ${viewMode === 'grid' ? 'w-full' : 'h-[400px] md:h-[600px] mask-fade-edges'}`}>
+                        <div
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            ref={scrollRef}
+                            className={`transition-all  duration-1000 ${viewMode === 'grid'
+                                ? 'grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 py-0 md:py-10'
+                                : 'flex flex-col gap-6 h-96 md:h-full w-full overflow-hidden py-[100px]'
+                                }`}
+                        >
+                            {activities.map((item, index) => (
+                                <div
+                                    key={index}
+                                    data-index={index}
+                                    className={`activity-card  shrink-0 snap-center relative rounded-xl md:rounded-2xl overflow-hidden border border-white/5 transition-all duration-700 ease-in-out group
+                                        ${viewMode === 'grid'
+                                            ? ' h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] w-full hover:border-red-600/30'
+                                            : 'w-[350px] md:w-full h-[300px] sm:h-[320px] md:h-[350px] lg:h-[380px]'
+                                        }
+                                    `}
+                                    style={viewMode === 'scroller' ? {
+                                        transform: activeIndex === index ? 'scale(1)' : 'scale(0.98)',
+                                        opacity: activeIndex === index ? 1 : 0.4
+                                    } : {}}
+                                >
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 
+                                            ${viewMode === 'grid' || activeIndex === index ? 'grayscale-0 scale-105' : 'grayscale'}
+                                        `}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
+
+                                    <div className="absolute bottom-2 md:bottom-6 left-2 md:left-6 right-2 md:right-6">
+                                        <h4 className={`text-2xl md:text-3xl font-black uppercase italic tracking-tighter transition-all duration-500 
+                                            ${viewMode === 'grid' || activeIndex === index ? 'text-white' : 'text-gray-400'}
+                                        `}>
+                                            {item.title}
+                                        </h4>
+                                        <p className={`text-gray-300 text-xs md:text-sm mt-2 transition-all duration-700 line-clamp-2
+                                            ${viewMode === 'grid' || activeIndex === index ? 'opacity-100' : 'opacity-0'}
+                                        `}>
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
 
             <style jsx global>{`
                 .mask-fade-edges {
-                    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
-                    -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+                    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+                    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
                 }
             `}</style>
         </section>

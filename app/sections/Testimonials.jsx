@@ -4,37 +4,47 @@ import { useState, useEffect } from 'react';
 const testimonialsData = [
   {
     id: 1,
-    name: "Sensei Michael Chen",
-    role: "3rd Dan Black Belt",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    content: "Training here has transformed not just my technique, but my entire mindset. The dojo's emphasis on discipline and respect reminds me of my own training in Japan. This is authentic martial arts at its finest.",
+    name: "Abhiram kA",
+    avatar: "assets/images/testimonials/abhiram.jpeg",
+    content: "One of the best decisions I’ve ever taken in my life. You not only learn kickboxing but also learn discipline and how to respect others. One of the best coach you will ever learn from. Here it’s a family ♥️ and everyone is respectful to each other 💪",
     rating: 5,
     martialArt: "Karate"
   },
   {
     id: 2,
-    name: "Sarah Johnson",
-    role: "Blue Belt, Brazilian Jiu-Jitsu",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    content: "I started as a complete beginner with no athletic background. The instructors broke down every technique with patience and precision. Two years later, I'm competing and loving every moment on the mats.",
+    name: "Bhgath prony",
+    avatar: "assets/images/testimonials/bhgath.jpeg",
+    content: "Just tried out a kickboxing class and wow 🔥! It’s such a killer workout but also super fun. The coach explains everything clearly and makes sure you’re doing the moves right. I’m sweating buckets every class but at the same time feeling stronger, more confident, and way less stressed. If you’re bored of normal workouts, seriously give this a try—you’ll love the energy 🥊❤️",
     rating: 5,
     martialArt: "BJJ"
   },
   {
     id: 3,
-    name: "James Rodriguez",
-    role: "Muay Thai Kru",
-    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
-    content: "The atmosphere here is unlike any gym I've trained at. It's tough but supportive - exactly how Muay Thai should be taught. The clinch work and pad holding are world-class.",
+    name: "Sooraj",
+    content: "Really friendly boxing classes welcoming of people’s at all levels.As a beginner, I felt supported, not just tossed into the deep end. The coach take the time to correct my form, ensuring I'm learning proper technique rather than just going through the motions.",
     rating: 5,
     martialArt: "Muay Thai"
   },
   {
     id: 4,
-    name: "Emily & David Kim",
-    role: "Parents of Junior Program Students",
-    avatar: "https://randomuser.me/api/portraits/women/63.jpg",
-    content: "Our children have gained so much confidence and respect through the junior martial arts program. They're more focused at school and have learned valuable anti-bullying techniques. Best decision we ever made.",
+    name: "Jayapreaksh",
+    avatar: "assets/images/testimonials/jayapreaksh.jpeg",
+    content: "Top-notch kickboxing training! AYODHANA FIGHTERS has transformed my fitness journey. The instructors are experts in their field and provide valuable feedback to improve technique. Plus, the community vibe here is unbeatable. Worth every penny!",
+    rating: 5,
+    martialArt: "Junior Program"
+  },
+  {
+    id: 5,
+    name: "Athul mR",
+    content: "Training here has improved my fitness, boosted my confidence, and reduced my stress levels. Also several members of the club have won state and national championships, which speaks volumes about the quality of training. I’m highly recommending training under Akhil Sir who are seeking to improve own Health and have a passion in Martial arts.",
+    rating: 5,
+    martialArt: "Junior Program"
+  }
+  ,
+  {
+    id: 6,
+    name: "Deepak",
+    content: "I’ve been training at this kickboxing club for a while now, and I can’t recommend it enough! The atmosphere is energetic and motivating, and the facilities are clean and well-maintained. But what really makes this place stand out is the trainer  absolutely awesome!",
     rating: 5,
     martialArt: "Junior Program"
   }
@@ -48,7 +58,7 @@ export default function Testimonials() {
     let interval;
     if (isAutoPlaying) {
       interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
+        setCurrentIndex((prevIndex) =>
           prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
         );
       }, 6000);
@@ -57,13 +67,13 @@ export default function Testimonials() {
   }, [isAutoPlaying]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonialsData.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -77,11 +87,10 @@ export default function Testimonials() {
     return (
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, index) => (
-          <svg 
+          <svg
             key={index}
-            className={`w-5 h-5 ${
-              index < rating ? 'text-red-600' : 'text-gray-300'
-            }`}
+            className={`w-5 h-5 ${index < rating ? 'text-red-600' : 'text-gray-300'
+              }`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -115,7 +124,7 @@ export default function Testimonials() {
       {/* Red Accent Lines - Like Dojo Decor */}
       <div className="absolute top-0 left-0 w-32 h-1 bg-red-600"></div>
       <div className="absolute top-0 right-0 w-32 h-1 bg-red-600"></div>
-      
+
       <div className="container relative px-4 mx-auto">
         {/* Section Title with Martial Arts Aesthetic */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
@@ -145,17 +154,17 @@ export default function Testimonials() {
               className="absolute left-0 z-20 p-3 -translate-y-1/2 bg-black border-2 border-red-800 rounded-full top-1/2 hover:bg-red-900 hover:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300 group"
               aria-label="Previous testimonial"
             >
-              <svg 
-                className="w-6 h-6 text-red-500 group-hover:text-white" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M15 19l-7-7 7-7" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
                 />
               </svg>
             </button>
@@ -166,24 +175,24 @@ export default function Testimonials() {
               className="absolute right-0 z-20 p-3 -translate-y-1/2 bg-black border-2 border-red-800 rounded-full top-1/2 hover:bg-red-900 hover:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300 group"
               aria-label="Next testimonial"
             >
-              <svg 
-                className="w-6 h-6 text-red-500 group-hover:text-white" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
             </button>
 
             {/* Testimonial Card */}
-            <div className="overflow-hidden rounded-2xl ">
-              <div 
+            <div className="overflow-hidden rounded-2xl">
+              <div
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
@@ -201,16 +210,19 @@ export default function Testimonials() {
                         <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-red-600"></div>
                       </div>
 
-                      {/* Belt Rank Indicator */}
-                      <div className={`absolute left-8 top-8 w-16 h-1.5 rounded-full bg-gradient-to-r ${getBeltColor(testimonial.role)}`}></div>
+                      {/* Belt Rank Indicator - Using rating instead of role */}
+                      <div className={`absolute left-8 top-8 w-16 h-1.5 rounded-full bg-gradient-to-r ${testimonial.rating >= 4.5 ? 'from-red-600 to-red-800' :
+                          testimonial.rating >= 3.5 ? 'from-blue-600 to-blue-800' :
+                            'from-green-600 to-green-800'
+                        }`}></div>
 
                       {/* Content */}
                       <div className="relative">
                         {/* Quote Icon - Oriental Style */}
                         <div className="mb-6">
-                          <svg 
-                            className="w-12 h-12 text-red-700 opacity-40" 
-                            fill="currentColor" 
+                          <svg
+                            className="w-12 h-12 text-red-700 opacity-40"
+                            fill="currentColor"
                             viewBox="0 0 32 32"
                           >
                             <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
@@ -225,28 +237,34 @@ export default function Testimonials() {
                         {/* Rating & Martial Art Tag */}
                         <div className="flex flex-wrap items-center justify-between mb-6">
                           <RatingStars rating={testimonial.rating} />
-                          <span className="px-3 py-1 text-sm font-medium text-red-500 bg-red-900 bg-opacity-30 rounded-full border border-red-800">
+                          {/* <span className="px-3 py-1 text-sm font-medium text-red-500 bg-red-900 bg-opacity-30 rounded-full border border-red-800">
                             {testimonial.martialArt}
-                          </span>
+                          </span> */}
                         </div>
 
                         {/* Author Info - With Belt Style */}
                         <div className="flex items-center">
                           <div className="relative">
-                            <img
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                              className="relative z-10 object-cover w-16 h-16 border-2 border-red-700 rounded-full"
-                            />
-                            <div className="absolute inset-0 w-16 h-16 border-2 border-red-500 rounded-full animate-ping opacity-20"></div>
+                            {testimonial.avatar ? (
+                              <>
+                                <img
+                                  src={testimonial.avatar}
+                                  alt={testimonial.name}
+                                  className="relative z-10 object-cover w-16 h-16 border-2 border-red-700 rounded-full"
+                                />
+                                <div className="absolute inset-0 w-16 h-16 border-2 border-red-500 rounded-full animate-ping opacity-20"></div>
+                              </>
+                            ) : (
+                              <div className="relative z-10 flex items-center justify-center w-16 h-16 text-2xl font-bold text-white bg-gradient-to-br from-red-600 to-red-800 border-2 border-red-700 rounded-full">
+                                {testimonial.name.charAt(0).toUpperCase()}
+                              </div>
+                            )}
                           </div>
                           <div className="ml-4">
                             <h4 className="text-lg font-bold text-white">
                               {testimonial.name}
                             </h4>
-                            <p className="text-sm text-red-400">
-                              {testimonial.role}
-                            </p>
+                            {/* Role section removed */}
                           </div>
                         </div>
                       </div>
@@ -266,11 +284,10 @@ export default function Testimonials() {
                 className={`relative group focus:outline-none`}
                 aria-label={`Go to testimonial ${index + 1}`}
               >
-                <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'w-10 bg-red-600' 
+                <div className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? 'w-10 bg-red-600'
                     : 'w-3 bg-gray-600 group-hover:bg-red-400'
-                }`}></div>
+                  }`}></div>
                 {/* Inner glow for active */}
                 {index === currentIndex && (
                   <div className="absolute inset-0 w-10 h-3 bg-red-500 rounded-full animate-ping opacity-30"></div>
@@ -279,7 +296,7 @@ export default function Testimonials() {
             ))}
           </div>
 
-         
+
 
           {/* CTA Button */}
           <div className="mt-12 text-center">

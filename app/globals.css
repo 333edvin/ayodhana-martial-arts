@@ -2,7 +2,21 @@
 
 @layer components {
  
+/* In your global CSS file (where your current styles are) */
 
+/* Enable smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add offset for fixed header (if you have a fixed navbar) */
+/* This ensures content doesn't hide behind the fixed header */
+html {
+    scroll-padding-top: 80px; /* Adjust this value to match your header height */
+    scroll-behavior: smooth;
+}
+
+/* Rest of your existing styles... */
 
 
 .founder-bg{

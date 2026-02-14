@@ -98,55 +98,62 @@ export default function Achievements() {
 
     return (
         <>
-            <section className="py-16 bg-gradient-to-b from-gray-50 to-white" id="achievements">
-                <div className="container mx-auto px-4">
-                    {/* Section Header */}
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                            Our <span className="text-red-600">Achievements</span>
-                        </h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Celebrating our milestones and memorable moments in martial arts excellence
-                        </p>
-                    </div>
+            <section className="bg-gradient-to-b from-gray-50 to-white w-full" id="achievements">
+                {/* Full width container with no horizontal padding */}
+                <div className="w-full">
+                    {/* Section Header - with max-width for readability but full width background */}
+                    {/* <div className="text-center mb-12 px-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our <span className="text-red-600">Achievements</span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Celebrating our milestones and memorable moments in martial arts excellence
+                </p>
+            </div> */}
 
-                    {/* Events Grid - 2 Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    {/* Events Grid - Full width with 2 cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 w-full">
                         {events.map((event) => (
                             <div
                                 key={event.id}
                                 onClick={() => openEventModal(event)}
-                                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                                className="group relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden cursor-pointer"
                             >
-                                {/* Event Image */}
-                                <div className="relative h-64 w-full overflow-hidden">
+                                {/* Event Image - Full size background */}
+                                <div className="absolute inset-0 w-full h-full">
                                     <Image
                                         src={event.mainImage}
                                         alt={event.name}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                                         sizes="(max-width: 768px) 100vw, 50vw"
+                                        priority
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                                    {/* Event Name Overlay */}
-                                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                                        <h3 className="text-2xl font-bold text-white mb-2">{event.name}</h3>
-                                        <p className="text-white/90 text-sm">{event.shortDescription}</p>
-                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 transition-all"></div>
                                 </div>
 
-                                {/* Quick Stats */}
-                                <div className="p-6">
-                                    <div className="flex items-center justify-between text-sm text-gray-600">
-                                        <span className="flex items-center gap-1">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {/* Content Overlay */}
+                                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-12">
+                                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 transform group-hover:translate-y-[-4px] transition-transform">
+                                        {event.name}
+                                    </h3>
+                                    <p className="text-white/90 text-sm md:text-base lg:text-lg max-w-xl mb-4">
+                                        {event.shortDescription}
+                                    </p>
+
+                                    {/* Quick Stats */}
+                                    <div className="flex items-center justify-between text-sm text-white/80 border-t border-white/20 pt-4">
+                                        <span className="flex items-center gap-2">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                             </svg>
                                             {event.images.length} photos
                                         </span>
-                                        <span className="text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                                            View Details →
+                                        <span className="text-white font-semibold group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-1">
+                                            View Details
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            </svg>
                                         </span>
                                     </div>
                                 </div>

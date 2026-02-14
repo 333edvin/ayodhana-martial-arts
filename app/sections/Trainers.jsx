@@ -21,6 +21,15 @@ export default function Trainers() {
   const trainers = [
     {
       id: 1,
+      name: "Akhil kj",
+      role: "Head Coach, Ayodhana Fighters",
+      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
+      image: "assets/images/trainer6.jpeg",
+      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      featured: true
+    },
+    {
+      id: 2,
       name: "Anil babu",
       role: "Fitness Trainer & National Champ",
       description: "5 years experience including international exposure in Dubai. 1-time National Champion dedicated to elite fitness.",
@@ -28,15 +37,7 @@ export default function Trainers() {
       socials: { facebook: "#", instagram: "#", twitter: "#" },
       featured: true
     },
-    {
-      id: 2,
-      name: "Emmanuval joshy",
-      role: "Kickboxing Specialist",
-      description: "3 years experience. Proud All Kerala Kickboxing National Champion 2024.",
-      image: "assets/images/trainer2.jpeg",
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: false
-    },
+    
     {
       id: 3,
       name: "Abhishek cr",
@@ -48,33 +49,15 @@ export default function Trainers() {
     },
     {
       id: 4,
-      name: "Adhithyan pv",
-      role: "Assistant Coach",
-      description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
-      image: "assets/images/trainer4.jpeg",
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: true
-    },
-    {
-      id: 5,
-      name: "Binto xavier",
-      role: "Senior Coach",
-      description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
-      image: "assets/images/trainer5.jpeg",
+      name: "Emmanuval joshy",
+      role: "Kickboxing Specialist",
+      description: "3 years experience. Proud All Kerala Kickboxing National Champion 2024.",
+      image: "assets/images/trainer2.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
       featured: false
     },
     {
-      id: 6,
-      name: "Akhil kj",
-      role: "Head Coach, Ayodhana Fighters",
-      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
-      image: "assets/images/trainer6.jpeg",
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: true
-    },
-    {
-      id: 7,
+      id: 5,
       name: "Nishak Tk",
       role: "Senior Coach",
       description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
@@ -83,16 +66,35 @@ export default function Trainers() {
       featured: false
     },
     {
-      id: 8,
+      id: 6,
+      name: "Binto xavier",
+      role: "Senior Coach",
+      description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
+      image: "assets/images/trainer5.jpeg",
+      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      featured: false
+    },
+    
+    {
+      id: 7,
       name: "Adarsh Ns",
       role: "Assistant Coach",
       description: "3 years experience helping students master fundamental techniques and physical conditioning.",
       image: "assets/images/trainer8.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
       featured: false
-    }
+    },
+    {
+      id: 8,
+      name: "Adhithyan pv",
+      role: "Assistant Coach",
+      description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
+      image: "assets/images/trainer4.jpeg",
+      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      featured: true
+    },
   ];
-
+  
   const handleCardClick = (id) => {
     if (isMobile) {
       setFlippedCards(prev => ({
