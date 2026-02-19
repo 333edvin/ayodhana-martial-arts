@@ -121,31 +121,33 @@ export default function Trainers() {
       <div className="relative w-full min-h-screen overflow-hidden">
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm">
+    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 animate-[fadeIn_1s_ease-in-out]">
       
-      {/* Border */}
-      <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
+      {/* Border with animation */}
+      <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none animate-pulse"></div>
       
-      {/* Founder Image */}
-      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative">
+      {/* Founder Image with animation */}
+      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative animate-[slideInLeft_0.8s_ease-out]">
         <img
           src="/assets/images/founder.png"
           alt="Shihan Sreejith"
-          className="w-full h-full object-contain drop-shadow-2xl"
+          className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-110"
         />
+        {/* Glow effect */}
+        <div className="absolute inset-0 rounded-full bg-red-500/20 blur-3xl -z-10 animate-[glow_3s_ease-in-out_infinite]"></div>
       </div>
       
-      {/* Founder Info */}
-      <div className="text-center md:text-left">
-        <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white">
+      {/* Founder Info with animation */}
+      <div className="text-center md:text-left animate-[slideInRight_0.8s_ease-out]">
+        <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white transition-all duration-300 hover:text-red-500 hover:tracking-wider">
           Shihan Sreejith
         </h3>
         
-        <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
+        <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider animate-[bounce-slow_2s_ease-in-out_infinite]">
           Founder – Ayodhana Martial Arts Association India
         </p>
         
-        <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify">
+        <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify transition-all duration-300 hover:text-white">
           7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
           and elevating martial arts excellence across India through discipline, honor, and mastery.
         </p>
@@ -153,6 +155,51 @@ export default function Trainers() {
       
     </div>
   </div>
+
+  <style jsx>{`
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+      }
+    }
+    
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+  `}</style>
 </div>
 
   {/* Section Title BELOW Founder */}
