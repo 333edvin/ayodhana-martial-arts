@@ -19,8 +19,10 @@ export default function Hero() {
 
         <p className="mt-6 text-xs sm:text-base md:text-lg lg:text-xl text-gray-200 max-w-sm sm:max-w-xl md:max-w-2xl leading-relaxed " >
           Where passion meets discipline and skill. We offer comprehensive
-          martial arts training including <span className="text-white font-semibold">KARATE</span>, 
-          <span className="text-white font-semibold"> KICK BOXING</span>, and 
+          martial arts training including <span className="text-white font-semibold">MUAY THAI</span>, 
+          <span className="text-white font-semibold"> KICK BOXING</span>,            
+          <span className="text-white font-semibold">KARATE</span>
+          and 
           <span className="text-white font-semibold"> SELF DEFENSE</span> for all ages and skill levels.
         </p>
 

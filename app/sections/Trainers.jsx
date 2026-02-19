@@ -118,47 +118,89 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-        <div className="relative mx-auto w-full max-w-6xl mb-20 group">
+        
+       <div className="relative w-full py-24 overflow-hidden">
 
-  {/* Glow Border */}
-  <div className="absolute inset-0 rounded-3xl border border-white/10"></div>
+  {/* 🔥 Background Image Collage */}
+  <div className="absolute inset-0 z-0 opacity-20">
+    <div className="relative w-full h-full">
 
-  {/* Animated Edge Shine */}
-  <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-    <div className="shine-border"></div>
+      {[
+        "/assets/images/bg/bg1.jpg",
+        "/assets/images/bg/bg2.jpg",
+        "/assets/images/bg/bg3.jpg",
+        "/assets/images/bg/bg4.jpg",
+        "/assets/images/bg/bg5.jpg",
+        "/assets/images/bg/bg6.jpg",
+        "/assets/images/bg/bg7.jpg",
+        "/assets/images/bg/bg8.jpg",
+        "/assets/images/bg/bg9.jpg",
+        "/assets/images/bg/bg10.jpg",
+      ].map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt="training background"
+          className={`
+            absolute object-cover rounded-xl
+            ${i % 2 === 0 ? "w-40 h-40" : ""}
+            ${i % 3 === 0 ? "w-56 h-32" : ""}
+            ${i % 4 === 0 ? "w-32 h-52" : ""}
+          `}
+          style={{
+            top: `${Math.random() * 90}%`,
+            left: `${Math.random() * 90}%`,
+          }}
+        />
+      ))}
+
+    </div>
   </div>
 
-  {/* Card Content */}
-  <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
 
-    {/* 🔥 Bigger Founder Image */}
-    <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0">
-      <img
-        src="/assets/images/founder.png"
-        alt="Shihan Sreejith"
-        className="w-full h-full object-contain drop-shadow-2xl"
-      />
+  {/* 🔥 Main Card */}
+  <div className="relative mx-auto w-full max-w-6xl mb-20 group z-10">
+
+    {/* Glow Border */}
+    <div className="absolute inset-0 rounded-3xl border border-white/10"></div>
+
+    {/* Animated Edge Shine */}
+    <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+      <div className="shine-border"></div>
     </div>
 
-    {/* Founder Info */}
-    <div className="text-center md:text-left">
-      <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white">
-        Shihan Sreejith
-      </h3>
+    {/* Card Content */}
+    <div className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
 
-      <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
-        Founder – Ayodhana Martial Arts Association India
-      </p>
+      {/* Founder Image */}
+      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0">
+        <img
+          src="/assets/images/founder.png"
+          alt="Shihan Sreejith"
+          className="w-full h-full object-contain drop-shadow-2xl"
+        />
+      </div>
 
-      <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify">
-      7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
-      and elevating martial arts excellence across India through discipline, honor, and mastery.
-    </p>
+      {/* Founder Info */}
+      <div className="text-center md:text-left">
+        <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white">
+          Shihan Sreejith
+        </h3>
+
+        <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
+          Founder – Ayodhana Martial Arts Association India
+        </p>
+
+        <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify">
+          7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
+          and elevating martial arts excellence across India through discipline, honor, and mastery.
+        </p>
+      </div>
 
     </div>
-
   </div>
 </div>
+
 
 
   {/* Section Title BELOW Founder */}
