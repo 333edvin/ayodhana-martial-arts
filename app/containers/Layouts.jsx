@@ -276,7 +276,7 @@ export default function Layouts({ children }) {
                             </div>
                             <div>
                                 <p className="text-white font-medium">Ayodhana Fighters</p>
-                                <p className="text-sm">Thamarayoor Building, Keltron Nagar</p>
+                                <p className="text-sm">Karama Bus Stop,Near Petrol Pumb,Thamarayoor Building,Keltron Nagar</p>
                                 <p className="text-sm">Kolazhy, Thrissur - 680010</p>
                                 <p className="text-sm text-gray-500 mt-1">Kerala, India</p>
                             </div>
@@ -289,8 +289,8 @@ export default function Layouts({ children }) {
                             <div>
                                 <p className="text-white font-medium mb-2">How to Reach</p>
                                 <ul className="text-sm space-y-1 text-gray-400">
-                                    <li>• 2 km from Thrissur Railway Station</li>
-                                    <li>• 3 km from Thrissur KSRTC Bus Stand</li>
+                                    <li>• 7 km from Thrissur Railway Station</li>
+                                    <li>• 6 km from Thrissur KSRTC Bus Stand</li>
                                     <li>• Near Keltron Nagar Junction</li>
                                 </ul>
                             </div>

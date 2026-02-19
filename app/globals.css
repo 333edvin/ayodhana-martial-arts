@@ -136,7 +136,9 @@ html {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 90%);
 }
 
-.shine-border {
+
+
+/* .shine-border {
   position: absolute;
   top: -50%;
   left: -50%;
@@ -161,4 +163,4 @@ html {
   100% {
     transform: translateX(100%) rotate(25deg);
   }
-}
+} */
