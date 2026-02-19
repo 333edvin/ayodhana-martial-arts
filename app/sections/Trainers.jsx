@@ -118,10 +118,10 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-      <div className="relative w-full min-h-screen overflow-hidden">
+      <div className="relative w-full min-h-screen overflow-hidden pb-32">
 
   {/* 🔥 FULL BACKGROUND COLLAGE GRID */}
-  <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-5 auto-rows-[180px] gap-2 z-0">
+  <div className="absolute inset-0 grid grid-cols-6 auto-rows-[140px] gap-3 z-0">
 
     {[
       "/assets/images/trainer2.jpeg",
@@ -146,22 +146,35 @@ export default function Trainers() {
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
-    ].map((src, i) => (
-      <div key={i} className="relative overflow-hidden">
-        <img
-          src={src}
-          alt="training background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-    ))}
+    ].map((src, i) => {
+
+      const collageStyles = [
+        "col-span-2 row-span-2",
+        "col-span-3 row-span-2",
+        "col-span-2 row-span-3",
+        "col-span-1 row-span-2",
+        "col-span-2 row-span-1",
+      ];
+
+      const randomClass = collageStyles[i % collageStyles.length];
+
+      return (
+        <div key={i} className={`relative overflow-hidden ${randomClass}`}>
+          <img
+            src={src}
+            alt="training background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      );
+    })}
 
   </div>
 
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
 
-    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/40 flex flex-col md:flex-row items-center gap-12">
+    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/60 flex flex-col md:flex-row items-center gap-12">
 
       {/* Glow Border */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
@@ -200,7 +213,6 @@ export default function Trainers() {
 
   </div>
 </div>
-
 
 
   {/* Section Title BELOW Founder */}
