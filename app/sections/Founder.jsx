@@ -52,7 +52,7 @@ export default function Founder() {
                 {/* Right Column: Text Content */}
                 <div className="flex flex-col space-y-6">
                     <div>
-                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">Head Coach</span>
+                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">hHead Coach</span>
                         <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mt-2">
                            Akhil K J
                         </h2>
