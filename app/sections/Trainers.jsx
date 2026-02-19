@@ -119,9 +119,6 @@ export default function Trainers() {
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
       <div className="relative w-full min-h-screen overflow-hidden">
-  {/* 🔥 DARK OVERLAY FOR READABILITY */}
-  <div className="absolute inset-0 bg-black/60 z-0"></div>
-
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
     <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/70 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm">
