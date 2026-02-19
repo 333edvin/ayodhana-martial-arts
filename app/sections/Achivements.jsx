@@ -10,20 +10,14 @@ const events = [
         name: '🥇 OXFORD PROFESSIONAL CHAMPIONSHIP - 2025',
         shortDescription: 'Title belt champion - Abishek CR',
         description: 'Abhishek CR emerged victorious at the Oxford Professional Championship 2025, claiming the prestigious FL Muay Thai Professional Title Belt. This championship victory showcases exceptional skill, dedication, and mastery in professional Muay Thai.',
-        mainImage: '/assets/images/event1/event1-1.jpeg',
+        mainImage: '/assets/images/oxford_championship/event1-1.jpeg',
         images: [
-            { id: 1, src: '/assets/images/event1/event1-1.jpeg', alt: 'Black Belt Ceremony group photo' },
-            { id: 2, src: '/assets/images/event1/event1-2.jpeg', alt: 'Students receiving belts' },
-            { id: 3, src: '/assets/images/event1/event1-3.jpeg', alt: 'Certificates presentation' },
-            { id: 4, src: '/assets/images/event1/event1-4.jpeg', alt: 'Group celebration' },
-            { id: 5, src: '/assets/images/event1/event1-5.jpeg', alt: 'Group celebration' },
-            { id: 6, src: '/assets/images/event1/event1-6.jpeg', alt: 'Group celebration' },
-            { id: 7, src: '/assets/images/event1/event1-7.jpg', alt: 'Group celebration' },
-            { id: 8, src: '/assets/images/event1/event1-8.jpg', alt: 'Group celebration' },
-            { id: 9, src: '/assets/images/event1/event1-9.jpeg', alt: 'Group celebration' },
-            { id: 10, src: '/assets/images/event1/event1-10.jpeg', alt: 'Group celebration' },
-            { id: 11, src: '/assets/images/event1/event1-11.jpeg', alt: 'Group celebration' },
-            { id: 12, src: '/assets/images/event1/event1-12.jpeg', alt: 'Group celebration' },
+            
+            { id: 1, src: '/assets/images/oxford_championship/event1-7.jpg', alt: 'Group celebration' },
+            { id: 2, src: '/assets/images/oxford_championship/event1-8.jpg', alt: 'Group celebration' },
+            { id: 3, src: '/assets/images/oxford_championship/event1-9.jpeg', alt: 'Group celebration' },
+            { id: 4, src: '/assets/images/oxford_championship/event1-10.jpeg', alt: 'Group celebration' },
+            { id: 5, src: '/assets/images/oxford_championship/event1-11.jpeg', alt: 'Group celebration' },
         ]
     },
     {
@@ -31,38 +25,45 @@ const events = [
         name: '🥊 PRIMAL Kick Boxing Title Belt Championship',
         shortDescription: 'Title belt champion - Nishak TK',
         description: 'Nishak TK demonstrated exceptional prowess at the PRIMAL Kick Boxing Championship, securing the prestigious title belt. This victory highlights the strength, technique, and determination of our champion in the competitive kick boxing arena.',
-        mainImage: '/assets/images/event2/event2-1.jpeg',
+        mainImage: '/assets/images/primal_title_belt/event2-1.jpeg',
         images: [
-            { id: 1, src: '/assets/images/event2/event2-1.jpeg', alt: 'Team photo with trophies' },
-            { id: 2, src: '/assets/images/event2/event2-2.jpeg', alt: 'Gold medal moments' },
-            { id: 3, src: '/assets/images/event2/event2-3.jpeg', alt: 'Competition action' },
-            { id: 4, src: '/assets/images/event2/event2-4.jpeg', alt: 'Award ceremony' },
+            { id: 1, src: '/assets/images/primal_title_belt/event2-1.jpeg', alt: 'Team photo with trophies' },
+            { id: 2, src: '/assets/images/primal_title_belt/event2-2.jpeg', alt: 'Gold medal moments' },
+            { id: 3, src: '/assets/images/primal_title_belt/event2-3.jpeg', alt: 'Competition action' },
+            { id: 4, src: '/assets/images/primal_title_belt/event2-4.jpeg', alt: 'Award ceremony' },
         ]
     },
-    {
-    id: 3,
-    name: "🥇 South India Open Championship - 2024",
-    shortDescription: "Gold Medal – Ayodhana Fighter",
-    description:
-        "Ayodhana Martial Arts Academy secured a Gold Medal at the South India Open Championship 2024. Our fighter demonstrated outstanding discipline, endurance, and technical mastery, bringing pride and recognition to the academy.",
-    mainImage: "/assets/images/event5/event5-1.jpeg",
-    images: [
-        { id: 1, src: "/assets/images/event5/event5-1.jpeg", alt: "Championship fight moment" },
-        { id: 2, src: "/assets/images/event5/event5-2.jpeg", alt: "Medal ceremony stage" },
-    ],
+   {
+        id: 3,
+        name: "🥇 FL Muay Thai Professional Championship - 2025",
+        shortDescription: "Professional Title Belt Champion – Abhishek CR",
+        description:
+            "Abhishek CR claimed the prestigious FL Muay Thai Professional Title Belt in 2025, delivering an outstanding performance marked by power, precision, and elite fight strategy. This professional championship victory highlights his dedication, warrior spirit, and mastery in competitive Muay Thai.",
+        mainImage: "/assets/images/fl_muay_thai/event1-1.jpeg",
+        images: [
+            { id: 1, src: '/assets/images/fl_muay_thai/event1-1.jpeg', alt: 'Black Belt Ceremony group photo' },
+            { id: 2, src: '/assets/images/fl_muay_thai/event1-2.jpeg', alt: 'Students receiving belts' },
+            { id: 3, src: '/assets/images/fl_muay_thai/event1-3.jpeg', alt: 'Certificates presentation' },
+            { id: 4, src: '/assets/images/fl_muay_thai/event1-4.jpeg', alt: 'Group celebration' },
+            { id: 5, src: '/assets/images/fl_muay_thai/event1-5.jpeg', alt: 'Group celebration' },
+            { id: 6, src: '/assets/images/fl_muay_thai/event1-6.jpeg', alt: 'Group celebration' },
+            { id: 12, src: '/assets/images/fl_muay_thai/event1-12.jpeg', alt: 'Group celebration' },
+        ],
     },
     {
-    id: 4,
-    name: "🏆 District Level Martial Arts Championship - 2025",
-    shortDescription: "Multiple Medal Winners",
-    description:
-        "Our students achieved multiple podium finishes at the District Level Martial Arts Championship 2025. The event showcased Ayodhana's strong training foundation and commitment to building future champions.",
-    mainImage: "/assets/images/event6/event6-1.jpeg",
-    images: [
-        { id: 1, src: "/assets/images/event6/event6-1.jpeg", alt: "Team group photo" },
-        { id: 2, src: "/assets/images/event6/event6-2.jpeg", alt: "Award distribution moment" },
-    ],
+        id: 4,
+        name: "🏆 All India Full Contact Heavyweight Championship - 2025",
+        shortDescription: "Champion – Anil Babu (Kaju Kado Karate)",
+        description:
+            "Anil Babu secured the prestigious All India Full Contact Heavyweight Championship title in Kaju Kado Karate – 2025. Demonstrating exceptional strength, technique, and warrior discipline, this victory marks a proud national-level achievement and reinforces the academy’s commitment to producing elite champions.",
+        mainImage: "/assets/images/kaju_kado_karate/image1.png",
+        images: [
+            { id: 1, src: "/assets/images/kaju_kado_karate/image1.png", alt: "Heavyweight championship moment" },
+            { id: 2, src: "/assets/images/kaju_kado_karate/image2.png", alt: "National title award ceremony" },
+            { id: 2, src: "/assets/images/kaju_kado_karate/image3.png", alt: "National title award ceremony" },
+        ],
     }
+
 
 ]
 
