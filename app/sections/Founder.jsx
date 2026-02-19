@@ -10,20 +10,19 @@ export default function Founder() {
                     {/* Background Images Wrapper */}
                     <div className="flex flex-col gap-3 w-full">
                         <Image
-                            src='/assets/images/coach-akhil-img1.jpg'
+                            src='/assets/images/coach-akhil-img2.jpg'
                             alt="background top"
                             width={600}
                             height={150}
                             className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_38%]"
                         />
-                       <Image
-    src='/assets/images/coach-akhil-img2.jpg'
-    alt="background bottom"
-    width={600}
-    height={150}
-    className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale"
-    style={{ objectPosition: 'left center' }}
-/>
+                        <Image
+                            src='/assets/images/coach-akhil-img1.jpg'
+                            alt="background bottom"
+                            width={600}
+                            height={150}
+                            className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_15%]"
+                        />
                     </div>
 
 
