@@ -119,10 +119,8 @@ export default function Trainers() {
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
       <div className="relative w-full min-h-screen overflow-hidden">
-
-  {/* 🔥 FULL BACKGROUND COLLAGE (NO GAPS) */}
-  <div className="absolute inset-0 z-0 columns-2 md:columns-3 lg:columns-4 gap-0">
-
+  {/* 🔥 FULL BACKGROUND COLLAGE WITH RANDOM SIZES */}
+  <div className="absolute inset-0 z-0 grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0">
     {[
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
@@ -146,28 +144,41 @@ export default function Trainers() {
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
-    ].map((src, i) => (
-      <img
-        key={i}
-        src={src}
-        alt="training background"
-        className="w-full mb-0 object-cover break-inside-avoid"
-      />
-    ))}
-
+    ].map((src, i) => {
+      // Generate random spans for collage effect
+      const rowSpan = Math.floor(Math.random() * 3) + 1; // 1-3 rows
+      const colSpan = Math.floor(Math.random() * 3) + 1; // 1-3 columns
+      
+      return (
+        <div
+          key={i}
+          className="relative overflow-hidden"
+          style={{
+            gridRow: `span ${rowSpan}`,
+            gridColumn: `span ${colSpan}`,
+            minHeight: rowSpan === 1 ? '150px' : rowSpan === 2 ? '300px' : '450px',
+          }}
+        >
+          <img
+            src={src}
+            alt="training background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      );
+    })}
   </div>
 
   {/* 🔥 DARK OVERLAY FOR READABILITY */}
-  <div className="absolute inset-0 bg-black/50 z-0"></div>
+  <div className="absolute inset-0 bg-black/60 z-0"></div>
 
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-
-    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/70 flex flex-col md:flex-row items-center gap-12">
-
+    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/70 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm">
+      
       {/* Border */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
-
+      
       {/* Founder Image */}
       <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative">
         <img
@@ -176,28 +187,26 @@ export default function Trainers() {
           className="w-full h-full object-contain drop-shadow-2xl"
         />
       </div>
-
+      
       {/* Founder Info */}
       <div className="text-center md:text-left">
         <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white">
           Shihan Sreejith
         </h3>
-
+        
         <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
           Founder – Ayodhana Martial Arts Association India
         </p>
-
+        
         <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify">
           7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
           and elevating martial arts excellence across India through discipline, honor, and mastery.
         </p>
       </div>
-
+      
     </div>
-
   </div>
 </div>
-
 
   {/* Section Title BELOW Founder */}
 
