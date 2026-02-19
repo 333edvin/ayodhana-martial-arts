@@ -119,56 +119,6 @@ export default function Trainers() {
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
       <div className="relative w-full min-h-screen overflow-hidden">
-  {/* 🔥 FULL BACKGROUND COLLAGE WITH RANDOM SIZES */}
-  <div className="absolute inset-0 z-0 grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-0">
-    {[
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-      "/assets/images/trainer2.jpeg",
-    ].map((src, i) => {
-      // Generate random spans for collage effect
-      const rowSpan = Math.floor(Math.random() * 3) + 1; // 1-3 rows
-      const colSpan = Math.floor(Math.random() * 3) + 1; // 1-3 columns
-      
-      return (
-        <div
-          key={i}
-          className="relative overflow-hidden"
-          style={{
-            gridRow: `span ${rowSpan}`,
-            gridColumn: `span ${colSpan}`,
-            minHeight: rowSpan === 1 ? '150px' : rowSpan === 2 ? '300px' : '450px',
-          }}
-        >
-          <img
-            src={src}
-            alt="training background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      );
-    })}
-  </div>
-
   {/* 🔥 DARK OVERLAY FOR READABILITY */}
   <div className="absolute inset-0 bg-black/60 z-0"></div>
 
