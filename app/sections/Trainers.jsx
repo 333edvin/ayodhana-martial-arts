@@ -121,7 +121,7 @@ export default function Trainers() {
       <div className="relative w-full min-h-screen overflow-hidden">
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/70 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm">
+    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm">
       
       {/* Border */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
