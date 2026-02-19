@@ -8,34 +8,47 @@ export default function Founder() {
                 <div className="relative flex flex-col items-center justify-center">
 
                     {/* Background Images Wrapper */}
-                   <div className="flex flex-col gap-3 w-full">
+                    {/* <div className="flex flex-col gap-3 w-full">
+                        <Image
+                            src='/assets/images/coach-akhil-img1.jpg'
+                            alt="background top"
+                            width={600}
+                            height={150}
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
+                        />
+                        <Image
+                            src='/assets/images/coach-akhil-img2.jpg'
+                            alt="background bottom"
+                            width={600}
+                            height={150}
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
+                        />
+                    </div> */}
+<div className="flex flex-col gap-3 w-full">
 
-  <div className="flex justify-end">
-    <div className="w-64 md:w-80">
-      <Image
-        src="/assets/images/coach-akhil-img1.jpg"
-        alt="background top"
-        width={600}
-        height={300}
-        className="w-full h-42 md:h-52 object-cover rounded-lg grayscale object-[center_38%]"
-      />
-    </div>
+  {/* Top Image → Move Right */}
+  <div className="ml-auto w-[95%]">
+    <Image
+      src="/assets/images/coach-akhil-img1.jpg"
+      alt="background top"
+      width={600}
+      height={150}
+      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
+    />
   </div>
 
-  <div className="flex justify-start">
-    <div className="w-64 md:w-80">
-      <Image
-        src="/assets/images/coach-akhil-img2.jpg"
-        alt="background bottom"
-        width={600}
-        height={300}
-        className="w-full h-42 md:h-52 object-cover rounded-lg grayscale object-[center_15%]"
-      />
-    </div>
+  {/* Bottom Image → Move Left */}
+  <div className="mr-auto w-[95%]">
+    <Image
+      src="/assets/images/coach-akhil-img2.jpg"
+      alt="background bottom"
+      width={600}
+      height={150}
+      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
+    />
   </div>
 
 </div>
-
 
                     {/* Main Founder Image: Centered Overlay */}
                     <div className="absolute inset-0 mb-8 md:mb-0 flex items-center justify-center">
@@ -52,7 +65,7 @@ export default function Founder() {
                 {/* Right Column: Text Content */}
                 <div className="flex flex-col space-y-6">
                     <div>
-                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">hHead Coach</span>
+                        <span className="text-red-600 font-bold tracking-widest uppercase text-sm">Head Coach</span>
                         <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mt-2">
                            Akhil K J
                         </h2>
