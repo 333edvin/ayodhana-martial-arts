@@ -10,14 +10,14 @@ export default function Founder() {
                     {/* Background Images Wrapper */}
                     <div className="flex flex-col gap-3 w-full">
                         <Image
-                            src='/assets/images/founder2.jpg'
+                            src='/assets/images/coach-akhil-img1.jpg'
                             alt="background top"
                             width={600}
                             height={150}
                             className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
                         />
                         <Image
-                            src='/assets/images/founder1.jpeg'
+                            src='/assets/images/coach-akhil-img2.jpg'
                             alt="background bottom"
                             width={600}
                             height={150}
@@ -28,7 +28,7 @@ export default function Founder() {
                     {/* Main Founder Image: Centered Overlay */}
                     <div className="absolute inset-0 mb-8 md:mb-0 flex items-center justify-center">
                         <Image
-                            src='/assets/images/founder.png'
+                            src='/assets/images/coach-akhil-main-image.png'
                             alt="Founder"
                             width={400}
                             height={400}
