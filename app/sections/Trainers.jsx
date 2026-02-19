@@ -118,7 +118,7 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-      <div className="relative w-full min-h-screen overflow-hidden">
+   <div className="relative w-full min-h-screen overflow-hidden">
   {/* 🔥 CARD WRAPPER */}
   <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
     <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 animate-[fadeIn_1s_ease-in-out]">
@@ -126,13 +126,62 @@ export default function Trainers() {
       {/* Border with animation */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none animate-pulse"></div>
       
-      {/* Founder Image with animation */}
+      {/* Founder Image with dragon and martial arts elements */}
       <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative animate-[slideInLeft_0.8s_ease-out]">
+        {/* Dragon SVG behind the image */}
+        <div className="absolute inset-0 -z-5 flex items-center justify-center">
+          <svg 
+            viewBox="0 0 200 200" 
+            className="w-full h-full text-red-600/20 animate-[dragonBreath_4s_ease-in-out_infinite]"
+            fill="currentColor"
+          >
+            {/* Dragon silhouette */}
+            <path d="M100 20 L120 50 L140 40 L150 60 L140 80 L160 90 L150 110 L170 120 L160 140 L140 130 L120 150 L100 140 L80 150 L60 140 L40 130 L30 120 L50 110 L40 90 L60 80 L50 60 L70 40 L90 50 L100 20" 
+                  fill="currentColor"/>
+            {/* Dragon eye */}
+            <circle cx="100" cy="70" r="5" fill="yellow" className="animate-pulse"/>
+            {/* Dragon claws */}
+            <path d="M70 100 L60 120 L70 110" fill="currentColor"/>
+            <path d="M130 100 L140 120 L130 110" fill="currentColor"/>
+            {/* Dragon flame */}
+            <path d="M100 140 L110 160 L100 170 L90 160 L100 140" fill="orange" className="animate-[flame_1s_ease-in-out_infinite]"/>
+          </svg>
+        </div>
+
+        {/* Martial arts circle (Yin Yang inspired) */}
+        <div className="absolute inset-0 -z-4 flex items-center justify-center opacity-20">
+          <svg viewBox="0 0 200 200" className="w-4/5 h-4/5 text-red-500 animate-[spin_20s_linear_infinite]">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <path d="M100 20 A60 60 0 0 1 100 140 A60 60 0 0 1 100 20" fill="currentColor" opacity="0.5"/>
+            <circle cx="100" cy="80" r="15" fill="white"/>
+            <circle cx="100" cy="120" r="15" fill="currentColor"/>
+          </svg>
+        </div>
+
+        {/* Japanese calligraphy style brush strokes */}
+        <div className="absolute inset-0 -z-3">
+          <svg viewBox="0 0 200 200" className="w-full h-full opacity-10">
+            <path d="M30 50 Q80 30, 130 50 T170 30" stroke="red" strokeWidth="3" fill="none" className="animate-[drawLine_3s_ease-in-out_infinite]"/>
+            <path d="M40 120 Q90 100, 140 120 T180 100" stroke="red" strokeWidth="3" fill="none" className="animate-[drawLine_3s_ease-in-out_infinite_0.5s]"/>
+            <path d="M20 170 Q70 150, 120 170 T160 150" stroke="red" strokeWidth="3" fill="none" className="animate-[drawLine_3s_ease-in-out_infinite_1s]"/>
+          </svg>
+        </div>
+
+        {/* Floating martial arts symbols */}
+        <div className="absolute -z-2 w-full h-full">
+          <div className="absolute top-0 left-0 text-4xl opacity-10 animate-float">⚡</div>
+          <div className="absolute bottom-0 right-0 text-4xl opacity-10 animate-float-delay">🥋</div>
+          <div className="absolute top-1/2 left-0 text-4xl opacity-10 animate-float-slow">⚔️</div>
+          <div className="absolute bottom-1/2 right-0 text-4xl opacity-10 animate-float-slower">🐉</div>
+        </div>
+
+        {/* Main founder image */}
         <img
           src="/assets/images/founder.png"
           alt="Shihan Sreejith"
-          className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-110"
+          className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-110 relative z-10"
         />
+        
         {/* Glow effect */}
         <div className="absolute inset-0 rounded-full bg-red-500/20 blur-3xl -z-10 animate-[glow_3s_ease-in-out_infinite]"></div>
       </div>
@@ -198,6 +247,58 @@ export default function Trainers() {
     @keyframes bounce-slow {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
+    }
+
+    @keyframes dragonBreath {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+      50% { transform: scale(1.05) rotate(2deg); opacity: 0.3; }
+    }
+
+    @keyframes flame {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+    }
+
+    @keyframes drawLine {
+      0% { stroke-dasharray: 200; stroke-dashoffset: 200; }
+      50% { stroke-dasharray: 200; stroke-dashoffset: 0; }
+      100% { stroke-dasharray: 200; stroke-dashoffset: -200; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    @keyframes float-delay {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(-5deg); }
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.1); }
+    }
+
+    @keyframes float-slower {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(10deg); }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-delay {
+      animation: float-delay 7s ease-in-out infinite;
+    }
+
+    .animate-float-slow {
+      animation: float-slow 8s ease-in-out infinite;
+    }
+
+    .animate-float-slower {
+      animation: float-slower 9s ease-in-out infinite;
     }
   `}</style>
 </div>
