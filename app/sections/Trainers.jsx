@@ -21,15 +21,24 @@ export default function Trainers() {
   const trainers = [
     {
       id: 1,
-      name: "Akhil kj",
-      role: "Head Coach, Ayodhana Fighters",
-      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
-      image: "assets/images/trainer6.jpeg",
+      name: "Abhishek cr",
+      role: "Senior Coach",
+      description: "5 years experience in Kickboxing & Muay Thai. 2-time Title Belt and 2-time National Champion.",
+      image: "assets/images/trainer3.jpeg",
       socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: true
+      featured: false
+    },
+     {
+      id: 2,
+      name: "Binto xavier",
+      role: "Senior Coach",
+      description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
+      image: "assets/images/trainer5.jpeg",
+      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      featured: false
     },
     {
-      id: 2,
+      id: 3,
       name: "Anil babu",
       role: "Fitness Trainer & National Champ",
       description: "5 years experience including international exposure in Dubai. 1-time National Champion dedicated to elite fitness.",
@@ -38,15 +47,7 @@ export default function Trainers() {
       featured: true
     },
     
-    {
-      id: 3,
-      name: "Abhishek cr",
-      role: "Senior Coach",
-      description: "5 years experience in Kickboxing & Muay Thai. 2-time Title Belt and 2-time National Champion.",
-      image: "assets/images/trainer3.jpeg",
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: false
-    },
+    
     {
       id: 4,
       name: "Emmanuval joshy",
@@ -65,18 +66,10 @@ export default function Trainers() {
       socials: { facebook: "#", instagram: "#", twitter: "#" },
       featured: false
     },
-    {
-      id: 6,
-      name: "Binto xavier",
-      role: "Senior Coach",
-      description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
-      image: "assets/images/trainer5.jpeg",
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
-      featured: false
-    },
+   
     
     {
-      id: 7,
+      id: 6,
       name: "Adarsh Ns",
       role: "Assistant Coach",
       description: "3 years experience helping students master fundamental techniques and physical conditioning.",
@@ -85,7 +78,7 @@ export default function Trainers() {
       featured: false
     },
     {
-      id: 8,
+      id: 7,
       name: "Adhithyan pv",
       role: "Assistant Coach",
       description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
@@ -125,6 +118,42 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
+         <div className="flex flex-col items-center justify-center mb-10">
+
+    {/* Founder Image */}
+    <div className="w-40 h-40 md:w-52 md:h-52 relative mb-6">
+      <img
+        src="/assets/images/shihan-sreejith.png"
+        alt="Shihan Sreejith"
+        className="w-full h-full object-contain drop-shadow-2xl"
+      />
+    </div>
+
+    {/* Founder Info */}
+    <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-black">
+      Shihan Sreejith
+    </h3>
+
+    <p className="text-red-600 font-semibold mt-2 text-sm md:text-base uppercase tracking-wider">
+      Founder – Ayodhana Martial Arts Association India
+    </p>
+
+    <p className="text-gray-700 mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
+      7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
+      and promoting martial arts excellence across India.
+    </p>
+
+  </div>
+
+  {/* Section Title BELOW Founder */}
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">
+    Our Expert Trainers
+  </h2>
+
+  <p className="text-base sm:text-lg md:text-xl text-gray-600">
+    Learn from certified martial arts instructors
+  </p>
+
         <div className="section-title text-center mb-10 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600">Learn from certified martial arts instructors</p>
