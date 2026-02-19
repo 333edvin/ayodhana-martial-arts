@@ -167,7 +167,7 @@ export default function Trainers() {
   </div>
 
   {/* 🔥 DARK LAYER FOR READABILITY (OPTIONAL BUT RECOMMENDED) */}
-  <div className="absolute inset-0 bg-black/50 z-0"></div>
+  {/* <div className="absolute inset-0 bg-black/50 z-0"></div> */}
 
   {/* 🔥 MAIN CARD */}
 <div className="relative bg-gradient-to-br from-gray-900/40 to-black/40 rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
