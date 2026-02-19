@@ -118,10 +118,21 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-         <div className="flex flex-col items-center justify-center mb-10">
+         <div className="relative mx-auto w-full max-w-4xl mb-16 group">
+
+  {/* Glow Border Wrapper */}
+  <div className="absolute inset-0 rounded-2xl border border-white/10"></div>
+
+  {/* Animated Edge Shine */}
+  <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+    <div className="shine-border"></div>
+  </div>
+
+  {/* Card Content */}
+  <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center gap-8">
 
     {/* Founder Image */}
-    <div className="w-40 h-40 md:w-52 md:h-52 relative mb-6">
+    <div className="w-40 h-40 md:w-56 md:h-56 shrink-0">
       <img
         src="/assets/images/founder.png"
         alt="Shihan Sreejith"
@@ -130,20 +141,24 @@ export default function Trainers() {
     </div>
 
     {/* Founder Info */}
-    <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-black">
-      Shihan Sreejith
-    </h3>
+    <div className="text-center md:text-left">
+      <h3 className="text-2xl md:text-4xl font-bold uppercase tracking-wide text-white">
+        Shihan Sreejith
+      </h3>
 
-    <p className="text-red-600 font-semibold mt-2 text-sm md:text-base uppercase tracking-wider">
-      Founder – Ayodhana Martial Arts Association India
-    </p>
+      <p className="text-red-500 font-semibold mt-3 text-sm md:text-base uppercase tracking-wider">
+        Founder – Ayodhana Martial Arts Association India
+      </p>
 
-    <p className="text-gray-700 mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
-      7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
-      and promoting martial arts excellence across India.
-    </p>
+      <p className="text-gray-300 mt-4 max-w-xl text-sm md:text-lg leading-relaxed">
+        7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
+        and elevating martial arts excellence across India through discipline, honor, and mastery.
+      </p>
+    </div>
 
   </div>
+</div>
+
 
   {/* Section Title BELOW Founder */}
 
