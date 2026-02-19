@@ -121,56 +121,65 @@ export default function Trainers() {
         
        <div className="relative w-full py-24 overflow-hidden">
 
-  {/* 🔥 Background Image Collage */}
-  <div className="absolute inset-0 z-0 opacity-20">
-    <div className="relative w-full h-full">
+  {/* 🔥 FULL BACKGROUND COLLAGE GRID (NO OPACITY) */}
+  <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-5 gap-2 z-0">
 
-      {[
-        "/assets/images/",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-        "/assets/images/trainer2.jpeg",
-      ].map((src, i) => (
+    {[
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+       "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+    ].map((src, i) => (
+      <div
+        key={i}
+        className={`
+          relative overflow-hidden
+          ${i % 5 === 0 ? "row-span-2" : ""}
+          ${i % 3 === 0 ? "col-span-2" : ""}
+        `}
+      >
         <img
-          key={i}
           src={src}
           alt="training background"
-          className={`
-            absolute object-cover rounded-xl
-            ${i % 2 === 0 ? "w-40 h-40" : ""}
-            ${i % 3 === 0 ? "w-56 h-32" : ""}
-            ${i % 4 === 0 ? "w-32 h-52" : ""}
-          `}
-          style={{
-            top: `${Math.random() * 90}%`,
-            left: `${Math.random() * 90}%`,
-          }}
+          className="w-full h-full object-cover"
         />
-      ))}
+      </div>
+    ))}
 
-    </div>
   </div>
 
+  {/* 🔥 DARK LAYER FOR READABILITY (OPTIONAL BUT RECOMMENDED) */}
+  <div className="absolute inset-0 bg-black/50 z-0"></div>
 
-  {/* 🔥 Main Card */}
+  {/* 🔥 MAIN CARD */}
   <div className="relative mx-auto w-full max-w-6xl mb-20 group z-10">
 
     {/* Glow Border */}
     <div className="absolute inset-0 rounded-3xl border border-white/10"></div>
 
-    {/* Animated Edge Shine */}
+    {/* Shine Effect */}
     <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
       <div className="shine-border"></div>
     </div>
 
-    {/* Card Content */}
-    <div className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
+    {/* Card Content (ONLY THIS IS TRANSPARENT) */}
+    <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
 
       {/* Founder Image */}
       <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0">
