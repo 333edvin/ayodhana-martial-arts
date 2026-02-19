@@ -65,7 +65,7 @@ export default function Schedule() {
         </div>
 
         {/* Desktop Table */}
-        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl max-w-6xl mx-auto">
+        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl max-w-7xl mx-auto">
           <table className="w-full">
             <thead className="bg-black text-white">
               <tr>
