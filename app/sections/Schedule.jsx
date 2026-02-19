@@ -11,29 +11,29 @@ export default function Schedule() {
       time: "5:30 PM - 6:30 PM",
       tuesday: { type: "boxing", name: "Boxing & Cardio" },
       thursday: { type: "kickboxing", name: "Kickboxing & Fight Training" },
-      saturday: { type: "muaythai", name: "Muay Thai & Strength" },
-      sunday: { type: "kickboxing", name: "Cardio & Kickboxing" },
+      saturday: { type: "muaythai", name: "Muay Thai & Strengthening" },
+      sunday: { type: "fightday", name: "Cardio, Kickboxing & Fight Day" },
     },
     {
       time: "6:30 PM - 7:30 PM",
-      tuesday: { type: "boxing", name: "Boxing & Conditioning" },
-      thursday: { type: "kickboxing", name: "Fight Training" },
-      saturday: { type: "muaythai", name: "Muay Thai Advanced" },
-      sunday: { type: "kickboxing", name: "Fight Practice" },
+      tuesday: { type: "boxing", name: "Boxing & Cardio" },
+      thursday: { type: "kickboxing", name: "Kickboxing & Fight Training" },
+      saturday: { type: "muaythai", name: "Muay Thai & Strengthening" },
+      sunday: { type: "fightday", name: "Cardio, Kickboxing & Fight Day" },
     },
     {
       time: "7:30 PM - 8:30 PM",
-      tuesday: { type: "boxing", name: "Advanced Boxing" },
-      thursday: { type: "kickboxing", name: "Advanced Kickboxing" },
-      saturday: { type: "boxing", name: "Sparring Session" },
-      sunday: { type: "muaythai", name: "Muay Thai Conditioning" },
+      tuesday: { type: "boxing", name: "Boxing & Cardio" },
+      thursday: { type: "kickboxing", name: "Kickboxing & Fight Training" },
+      saturday: { type: "muaythai", name: "Muay Thai & Strengthening" },
+      sunday: { type: "fightday", name: "Cardio, Kickboxing & Fight Day" },
     },
     {
       time: "8:30 PM - 9:30 PM",
-      tuesday: { type: "senior", name: "Seniors Batch (18+)" },
-      thursday: { type: "senior", name: "Seniors Batch (18+)" },
-      saturday: { type: "senior", name: "Seniors Batch (18+)" },
-      sunday: { type: "senior", name: "Seniors Batch (18+)" },
+      tuesday: { type: "seniorBoxing", name: "Senior Batch – Boxing & Cardio" },
+      thursday: { type: "seniorKick", name: "Senior Batch – Kickboxing & Fight Training" },
+      saturday: { type: "seniorMuay", name: "Senior Batch – Muay Thai & Strengthening" },
+      sunday: { type: "seniorFight", name: "Senior Batch – Fight Day Training" },
     },
   ];
 
@@ -42,10 +42,14 @@ export default function Schedule() {
   const getClassTypeColor = (type) => {
     const colors = {
       karate: "bg-blue-100 text-blue-800 border-blue-300",
+      boxing: "bg-orange-100 text-orange-800 border-orange-300",
       kickboxing: "bg-red-100 text-red-800 border-red-300",
       muaythai: "bg-purple-100 text-purple-800 border-purple-300",
-      boxing: "bg-orange-100 text-orange-800 border-orange-300",
-      senior: "bg-yellow-100 text-yellow-800 border-yellow-300",
+      fightday: "bg-pink-100 text-pink-800 border-pink-300",
+      seniorBoxing: "bg-yellow-100 text-yellow-800 border-yellow-300",
+      seniorKick: "bg-yellow-100 text-yellow-800 border-yellow-300",
+      seniorMuay: "bg-yellow-100 text-yellow-800 border-yellow-300",
+      seniorFight: "bg-yellow-100 text-yellow-800 border-yellow-300",
     };
     return colors[type] || "bg-gray-100 text-gray-800 border-gray-300";
   };
@@ -60,12 +64,12 @@ export default function Schedule() {
             Weekly Training Schedule
           </h2>
           <p className="text-lg text-gray-600">
-            Classes available on Tuesday, Thursday, Saturday & Sunday
+            Tuesday, Thursday, Saturday & Sunday
           </p>
         </div>
 
         {/* Desktop Table */}
-        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl max-w-7xl mx-auto">
+        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl w-full max-w-[1400px] mx-auto">
           <table className="w-full">
             <thead className="bg-black text-white">
               <tr>
@@ -108,14 +112,15 @@ export default function Schedule() {
           </table>
         </div>
 
-        {/* Important Note */}
+        {/* Important Notice */}
         <div className="mt-12 text-center max-w-2xl mx-auto">
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 shadow-md">
             <h4 className="font-bold text-gray-900 mb-3 text-lg">
               Important Notice
             </h4>
             <p className="text-sm text-gray-700">
-              🥋 Karate is conducted exclusively from <strong>4:30 PM – 5:30 PM</strong> on 
+              🥋 Karate is conducted exclusively from 
+              <strong> 4:30 PM – 5:30 PM</strong> on 
               <strong> Saturday & Sunday only</strong>.
             </p>
           </div>
