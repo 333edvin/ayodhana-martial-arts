@@ -8,22 +8,28 @@ export default function Founder() {
                 <div className="relative flex flex-col items-center justify-center">
 
                     {/* Background Images Wrapper */}
-                    <div className="flex flex-col gap-3 w-full">
-                        <Image
-                            src='/assets/images/coach-akhil-img1.jpg'
-                            alt="background top"
-                            width={600}
-                            height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_38%]"
-                        />
-                        <Image
-                            src='/assets/images/coach-akhil-img2.jpg'
-                            alt="background bottom"
-                            width={600}
-                            height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_15%]"
-                        />
-                    </div>
+                  <div className="relative w-full h-[450px]">
+
+  {/* First Image - Top Right */}
+  <Image
+    src="/assets/images/coach-akhil-img1.jpg"
+    alt="background top"
+    width={600}
+    height={300}
+    className="absolute top-0 right-0 h-42 md:h-52 w-64 md:w-80 object-cover rounded-lg grayscale object-[center_38%]"
+  />
+
+  {/* Second Image - Bottom Left */}
+  <Image
+    src="/assets/images/coach-akhil-img2.jpg"
+    alt="background bottom"
+    width={600}
+    height={300}
+    className="absolute bottom-0 left-0 h-42 md:h-52 w-64 md:w-80 object-cover rounded-lg grayscale object-[center_15%]"
+  />
+
+</div>
+
 
                     {/* Main Founder Image: Centered Overlay */}
                     <div className="absolute inset-0 mb-8 md:mb-0 flex items-center justify-center">
