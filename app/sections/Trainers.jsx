@@ -118,11 +118,10 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-        
-       <div className="relative w-full py-24 overflow-hidden">
+      <div className="relative w-full min-h-screen overflow-hidden">
 
-  {/* 🔥 FULL BACKGROUND COLLAGE GRID (NO OPACITY) */}
-  <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-5 gap-2 z-0">
+  {/* 🔥 FULL BACKGROUND COLLAGE GRID */}
+  <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-5 auto-rows-[180px] gap-2 z-0">
 
     {[
       "/assets/images/trainer2.jpeg",
@@ -135,7 +134,7 @@ export default function Trainers() {
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
-       "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
@@ -148,14 +147,7 @@ export default function Trainers() {
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
     ].map((src, i) => (
-      <div
-        key={i}
-        className={`
-          relative overflow-hidden
-          ${i % 5 === 0 ? "row-span-2" : ""}
-          ${i % 3 === 0 ? "col-span-2" : ""}
-        `}
-      >
+      <div key={i} className="relative overflow-hidden">
         <img
           src={src}
           alt="training background"
@@ -166,25 +158,21 @@ export default function Trainers() {
 
   </div>
 
-  {/* 🔥 DARK LAYER FOR READABILITY (OPTIONAL BUT RECOMMENDED) */}
-  {/* <div className="absolute inset-0 bg-black/50 z-0"></div> */}
+  {/* 🔥 CARD WRAPPER */}
+  <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
 
-  {/* 🔥 MAIN CARD */}
-<div className="relative bg-gradient-to-br from-gray-900/40 to-black/40 rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
+    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/40 flex flex-col md:flex-row items-center gap-12">
 
-    {/* Glow Border */}
-    <div className="absolute inset-0 rounded-3xl border border-white/10"></div>
+      {/* Glow Border */}
+      <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
 
-    {/* Shine Effect */}
-    <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
-      <div className="shine-border"></div>
-    </div>
-
-    {/* Card Content (ONLY THIS IS TRANSPARENT) */}
-    <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
+      {/* Shine Effect */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+        <div className="shine-border"></div>
+      </div>
 
       {/* Founder Image */}
-      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0">
+      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative">
         <img
           src="/assets/images/founder.png"
           alt="Shihan Sreejith"
@@ -209,6 +197,7 @@ export default function Trainers() {
       </div>
 
     </div>
+
   </div>
 </div>
 
