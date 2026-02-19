@@ -24,27 +24,27 @@ export default function Founder() {
                             className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
                         />
                     </div> */}
-<div className="flex flex-col gap-3 w-full">
+<div className="flex flex-col gap-3 w-full overflow-hidden">
 
-  {/* Top Image → More Right */}
-  <div className="ml-auto w-[75%]">
+  {/* Top Image → Move Right */}
+  <div className="w-full overflow-hidden">
     <Image
       src="/assets/images/coach-akhil-img1.jpg"
       alt="background top"
       width={600}
       height={150}
-      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
+      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%] translate-x-10"
     />
   </div>
 
-  {/* Bottom Image → More Left */}
-  <div className="mr-auto w-[75%]">
+  {/* Bottom Image → Move Left */}
+  <div className="w-full overflow-hidden">
     <Image
       src="/assets/images/coach-akhil-img2.jpg"
       alt="background bottom"
       width={600}
       height={150}
-      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
+      className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%] -translate-x-10"
     />
   </div>
 
