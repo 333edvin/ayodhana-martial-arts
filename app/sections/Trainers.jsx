@@ -145,6 +145,8 @@ export default function Trainers() {
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
       "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
+      "/assets/images/trainer2.jpeg",
     ].map((src, i) => (
       <div
         key={i}
@@ -168,7 +170,7 @@ export default function Trainers() {
   <div className="absolute inset-0 bg-black/50 z-0"></div>
 
   {/* 🔥 MAIN CARD */}
-  <div className="relative mx-auto w-full max-w-6xl mb-20 group z-10">
+<div className="relative bg-gradient-to-br from-gray-900/40 to-black/40 rounded-3xl p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12">
 
     {/* Glow Border */}
     <div className="absolute inset-0 rounded-3xl border border-white/10"></div>
