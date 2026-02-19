@@ -126,16 +126,16 @@ export default function Trainers() {
     <div className="relative w-full h-full">
 
       {[
-        "/assets/images/bg/bg1.jpg",
-        "/assets/images/bg/bg2.jpg",
-        "/assets/images/bg/bg3.jpg",
-        "/assets/images/bg/bg4.jpg",
-        "/assets/images/bg/bg5.jpg",
-        "/assets/images/bg/bg6.jpg",
-        "/assets/images/bg/bg7.jpg",
-        "/assets/images/bg/bg8.jpg",
-        "/assets/images/bg/bg9.jpg",
-        "/assets/images/bg/bg10.jpg",
+        "/assets/images/",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
+        "/assets/images/trainer2.jpeg",
       ].map((src, i) => (
         <img
           key={i}
