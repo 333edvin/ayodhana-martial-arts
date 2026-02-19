@@ -123,7 +123,7 @@ export default function Trainers() {
     {/* Founder Image */}
     <div className="w-40 h-40 md:w-52 md:h-52 relative mb-6">
       <img
-        src="/assets/images/shihan-sreejith.png"
+        src="/assets/images/founder.png"
         alt="Shihan Sreejith"
         className="w-full h-full object-contain drop-shadow-2xl"
       />
@@ -146,13 +146,6 @@ export default function Trainers() {
   </div>
 
   {/* Section Title BELOW Founder */}
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">
-    Our Expert Trainers
-  </h2>
-
-  <p className="text-base sm:text-lg md:text-xl text-gray-600">
-    Learn from certified martial arts instructors
-  </p>
 
         <div className="section-title text-center mb-10 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
