@@ -2,32 +2,42 @@ export default function Schedule() {
   const scheduleData = [
     {
       time: "4:30 PM - 5:30 PM",
+      tuesday: null,
+      thursday: null,
       saturday: { type: "karate", name: "Karate" },
       sunday: { type: "karate", name: "Karate" },
     },
     {
       time: "5:30 PM - 6:30 PM",
+      tuesday: { type: "boxing", name: "Boxing & Cardio" },
+      thursday: { type: "kickboxing", name: "Kickboxing & Fight Training" },
       saturday: { type: "muaythai", name: "Muay Thai & Strength" },
-      sunday: { type: "kickboxing", name: "Kickboxing & Fight" },
+      sunday: { type: "kickboxing", name: "Cardio & Kickboxing" },
     },
     {
       time: "6:30 PM - 7:30 PM",
-      saturday: { type: "boxing", name: "Boxing & Cardio" },
-      sunday: { type: "kickboxing", name: "Kickboxing & Fight" },
+      tuesday: { type: "boxing", name: "Boxing & Conditioning" },
+      thursday: { type: "kickboxing", name: "Fight Training" },
+      saturday: { type: "muaythai", name: "Muay Thai Advanced" },
+      sunday: { type: "kickboxing", name: "Fight Practice" },
     },
     {
       time: "7:30 PM - 8:30 PM",
-      saturday: { type: "boxing", name: "Advanced Boxing" },
+      tuesday: { type: "boxing", name: "Advanced Boxing" },
+      thursday: { type: "kickboxing", name: "Advanced Kickboxing" },
+      saturday: { type: "boxing", name: "Sparring Session" },
       sunday: { type: "muaythai", name: "Muay Thai Conditioning" },
     },
     {
       time: "8:30 PM - 9:30 PM",
+      tuesday: { type: "senior", name: "Seniors Batch (18+)" },
+      thursday: { type: "senior", name: "Seniors Batch (18+)" },
       saturday: { type: "senior", name: "Seniors Batch (18+)" },
       sunday: { type: "senior", name: "Seniors Batch (18+)" },
     },
   ];
 
-  const days = ["Saturday", "Sunday"];
+  const days = ["Tuesday", "Thursday", "Saturday", "Sunday"];
 
   const getClassTypeColor = (type) => {
     const colors = {
@@ -47,21 +57,21 @@ export default function Schedule() {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Weekend Training Schedule
+            Weekly Training Schedule
           </h2>
           <p className="text-lg text-gray-600">
-            Classes conducted only on <span className="font-semibold text-red-600">Saturday & Sunday</span>
+            Classes available on Tuesday, Thursday, Saturday & Sunday
           </p>
         </div>
 
         {/* Desktop Table */}
-        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl max-w-5xl mx-auto">
+        <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl max-w-6xl mx-auto">
           <table className="w-full">
             <thead className="bg-black text-white">
               <tr>
-                <th className="py-5 px-6 text-left w-1/3">Time</th>
+                <th className="py-5 px-6 text-left w-1/5">Time</th>
                 {days.map((day) => (
-                  <th key={day} className="py-5 px-6 text-center w-1/3">
+                  <th key={day} className="py-5 px-6 text-center w-1/5">
                     {day}
                   </th>
                 ))}
@@ -74,65 +84,39 @@ export default function Schedule() {
                     {row.time}
                   </td>
 
-                  {days.map((day) => (
-                    <td key={day} className="py-4 px-6 text-center">
-                      <span
-                        className={`inline-block px-5 py-2 rounded-lg border font-semibold text-sm ${getClassTypeColor(
-                          row[day.toLowerCase()].type
-                        )}`}
-                      >
-                        {row[day.toLowerCase()].name}
-                      </span>
-                    </td>
-                  ))}
+                  {days.map((day) => {
+                    const classData = row[day.toLowerCase()];
+                    return (
+                      <td key={day} className="py-4 px-6 text-center">
+                        {classData ? (
+                          <span
+                            className={`inline-block px-4 py-2 rounded-lg border font-semibold text-sm ${getClassTypeColor(
+                              classData.type
+                            )}`}
+                          >
+                            {classData.name}
+                          </span>
+                        ) : (
+                          <span className="text-gray-400 text-sm">—</span>
+                        )}
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Mobile Cards */}
-        <div className="lg:hidden space-y-6 max-w-xl mx-auto">
-          {scheduleData.map((row) => (
-            <div
-              key={row.time}
-              className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
-            >
-              <div className="bg-black text-white py-3 text-center font-bold">
-                {row.time}
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 p-4">
-                {days.map((day) => (
-                  <div key={day} className="text-center">
-                    <p className="text-sm font-semibold text-gray-600 mb-2">
-                      {day}
-                    </p>
-                    <span
-                      className={`block px-3 py-2 rounded-lg border font-medium text-sm ${getClassTypeColor(
-                        row[day.toLowerCase()].type
-                      )}`}
-                    >
-                      {row[day.toLowerCase()].name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Notes Section */}
-        <div className="mt-14 text-center max-w-2xl mx-auto">
-          <div className="bg-red-50 border border-red-200 rounded-2xl p-6 shadow-md">
+        {/* Important Note */}
+        <div className="mt-12 text-center max-w-2xl mx-auto">
+          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 shadow-md">
             <h4 className="font-bold text-gray-900 mb-3 text-lg">
-              Important Notes
+              Important Notice
             </h4>
-            <p className="text-sm text-gray-600">
-              ⚡ Karate class is exclusively conducted from <span className="font-semibold">4:30 PM – 5:30 PM</span> on both days.
-            </p>
-            <p className="text-xs text-gray-500 mt-4 border-t pt-4">
-              Academy remains closed on weekdays.
+            <p className="text-sm text-gray-700">
+              🥋 Karate is conducted exclusively from <strong>4:30 PM – 5:30 PM</strong> on 
+              <strong> Saturday & Sunday only</strong>.
             </p>
           </div>
         </div>
