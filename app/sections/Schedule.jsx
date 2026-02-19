@@ -4,26 +4,35 @@ export default function Schedule() {
       time: "4:30 PM - 5:30 PM",
       saturday: { type: "karate", name: "Karate" },
       sunday: { type: "karate", name: "Karate" },
+      
     },
     {
       time: "5:30 PM - 6:30 PM",
-      saturday: { type: "kickboxing", name: "Kickboxing" },
-      sunday: { type: "kickboxing", name: "Kickboxing" },
+      tuesday: { type: "Boxing & Cardio", name: "Boxing & Cardio" },
+      thursday: { type: "Kick boxing & Fight training", name: "Kick boxing & Fight training" },
+      saturday: { type: "Muay thai & Strengthening", name: "Muay thai & Strengthening" },
+      sunday: { type: "Cardio,Kick Boxing & Fight day", name: "Cardio,Kick Boxing & Fight day" },
     },
     {
       time: "6:30 PM - 7:30 PM",
-      saturday: { type: "muaythai", name: "Muay Thai" },
-      sunday: { type: "muaythai", name: "Muay Thai" },
+      tuesday: { type: "Boxing & Cardio", name: "Boxing & Cardio" },
+      thursday: { type: "Kick boxing & Fight training", name: "Kick boxing & Fight training" },
+      saturday: { type: "Muay thai & Strengthening", name: "Muay thai & Strengthening" },
+      sunday: { type: "Cardio,Kick Boxing & Fight day", name: "Cardio,Kick Boxing & Fight day" },
     },
     {
       time: "7:30 PM - 8:30 PM",
-      saturday: { type: "boxing", name: "Boxing" },
-      sunday: { type: "boxing", name: "Boxing" },
+      tuesday: { type: "Boxing & Cardio", name: "Boxing & Cardio" },
+      thursday: { type: "Kick boxing & Fight training", name: "Kick boxing & Fight training" },
+      saturday: { type: "Muay thai & Strengthening", name: "Muay thai & Strengthening" },
+      sunday: { type: "Cardio,Kick Boxing & Fight day", name: "Cardio,Kick Boxing & Fight day" },
     },
     {
       time: "8:30 PM - 9:30 PM",
-      saturday: { type: "senior", name: "Seniors Batch" },
-      sunday: { type: "senior", name: "Seniors Batch" },
+      tuesday: { type: "Boxing & Cardio", name: "Boxing & Cardio" },
+      thursday: { type: "Kick boxing & Fight training", name: "Kick boxing & Fight training" },
+      saturday: { type: "Muay thai & Strengthening", name: "Muay thai & Strengthening" },
+      sunday: { type: "Cardio,Kick Boxing & Fight day", name: "Cardio,Kick Boxing & Fight day" },
     },
   ];
 
@@ -49,9 +58,15 @@ export default function Schedule() {
             Weekend Class Schedule
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Saturday & Sunday Only
+           Tuesday,Thursday,Saturday & Sunday Only
           </p>
           <div className="mt-4 inline-flex gap-3">
+             <span className="px-6 py-2 bg-red-600 text-white rounded-full text-sm font-semibold">
+              Tuesday
+            </span>
+            <span className="px-6 py-2 bg-red-600 text-white rounded-full text-sm font-semibold">
+              Thursday
+            </span>
             <span className="px-6 py-2 bg-red-600 text-white rounded-full text-sm font-semibold">
               Saturday
             </span>
