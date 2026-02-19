@@ -26,8 +26,8 @@ export default function Founder() {
                     </div> */}
 <div className="flex flex-col gap-3 w-full">
 
-  {/* Top Image → Move Right */}
-  <div className="ml-auto w-[95%]">
+  {/* Top Image → More Right */}
+  <div className="ml-auto w-[75%]">
     <Image
       src="/assets/images/coach-akhil-img1.jpg"
       alt="background top"
@@ -37,8 +37,8 @@ export default function Founder() {
     />
   </div>
 
-  {/* Bottom Image → Move Left */}
-  <div className="mr-auto w-[95%]">
+  {/* Bottom Image → More Left */}
+  <div className="mr-auto w-[75%]">
     <Image
       src="/assets/images/coach-akhil-img2.jpg"
       alt="background bottom"
@@ -49,6 +49,7 @@ export default function Founder() {
   </div>
 
 </div>
+
 
                     {/* Main Founder Image: Centered Overlay */}
                     <div className="absolute inset-0 mb-8 md:mb-0 flex items-center justify-center">
