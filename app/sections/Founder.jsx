@@ -75,17 +75,25 @@ export default function Founder() {
                                 Certified Kickboxing & Muay Thai trainer with a proven track record of developing disciplined, high-performance fighters. Strategic Lead at Ayodhana Fighters, driving vision, training excellence, and competitive success through structured programs and strong leadership.
                             </p>
                         </div>
-                    {/* Instagram Link */}
-                    <div className="pt-4">
-                        <a 
+                        <div className="mt-8">
+                            <a
                             href="https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ=="
-                            className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
-                            aria-label="Instagram"
                             target="_blank"
-                        >
-                            <FaInstagram className="text-lg md:text-xl" />
-                        </a>
-                    </div>
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 via-red-600 to-yellow-500 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-500/40"
+                            >
+                            {/* Instagram SVG Icon */}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                            >
+                                <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm8.5 2A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5zm-4.25 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.88a1.12 1.12 0 1 0 0 2.24 1.12 1.12 0 0 0 0-2.24z"/>
+                            </svg>
+                            Follow on Instagram
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
