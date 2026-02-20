@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
-import { FaWhatsapp } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import Image from "next/image";
 import { FaInstagram, FaPhone, FaWhatsapp } from "react-icons/fa";
