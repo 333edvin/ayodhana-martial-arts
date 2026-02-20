@@ -116,7 +116,7 @@ export default function Layouts({ children }) {
 
             {/* Column 1: Brand Bio */}
             <div className="flex flex-col gap-6">
-                <h3 className="text-white text-2xl font-black uppercase tracking-tighter italic">
+                <h3 className="text-white text-2xl font-black uppercase tracking-tighter italic"> 
                     Ayodhana<span className="text-red-600">Fighters</span>
                 </h3>
                 <p className="leading-relaxed text-sm">
