@@ -188,7 +188,7 @@ export default function Trainers() {
                 </h3>
                 
                 <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
-                  Founder – Ayodhana Martial Arts Association India
+                  Founder – Ayodhana Martial Arts Association India---------------
                 </p>
                 
               <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify break-words hyphens-auto transition-all duration-300 hover:text-white">
