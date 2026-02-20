@@ -19,8 +19,18 @@ export default function Trainers() {
   }, []);
 
   const trainers = [
+    
     {
       id: 1,
+      name: "Akhil kj",
+      role: "Head Coach, Ayodhana Fighters",
+      description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
+      image: "assets/images/trainer4.jpeg",
+      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      featured: true
+    },
+    {
+      id: 2,
       name: "Abhishek cr",
       role: "Senior Coach",
       description: "5 years experience in Kickboxing & Muay Thai. 2-time Title Belt and 2-time National Champion.",
@@ -29,7 +39,7 @@ export default function Trainers() {
       featured: false
     },
      {
-      id: 2,
+      id: 4,
       name: "Binto xavier",
       role: "Senior Coach",
       description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
@@ -38,7 +48,7 @@ export default function Trainers() {
       featured: false
     },
     {
-      id: 3,
+      id: 4,
       name: "Anil babu",
       role: "Fitness Trainer & National Champ",
       description: "5 years experience including international exposure in Dubai. 1-time National Champion dedicated to elite fitness.",
@@ -49,7 +59,7 @@ export default function Trainers() {
     
     
     {
-      id: 4,
+      id: 5,
       name: "Emmanuval joshy",
       role: "Kickboxing Specialist",
       description: "3 years experience. Proud All Kerala Kickboxing National Champion 2024.",
@@ -58,7 +68,7 @@ export default function Trainers() {
       featured: false
     },
     {
-      id: 5,
+      id: 6,
       name: "Nishak Tk",
       role: "Senior Coach",
       description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
@@ -69,7 +79,7 @@ export default function Trainers() {
    
     
     {
-      id: 6,
+      id: 7,
       name: "Adarsh Ns",
       role: "Assistant Coach",
       description: "3 years experience helping students master fundamental techniques and physical conditioning.",
@@ -78,7 +88,7 @@ export default function Trainers() {
       featured: false
     },
     {
-      id: 7,
+      id: 8,
       name: "Adhithyan pv",
       role: "Assistant Coach",
       description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
