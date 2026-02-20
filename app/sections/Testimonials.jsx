@@ -300,12 +300,14 @@ export default function Testimonials() {
 
           {/* CTA Button */}
           <div className="mt-12 text-center">
+            <a href="#programs">
             <button className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform bg-red-700 border-2 border-red-600 rounded-lg hover:bg-red-800 hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900">
               Begin Your Journey
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
+            </a>
           </div>
         </div>
       </div>

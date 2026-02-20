@@ -18,11 +18,11 @@ export default function Founder() {
                             className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
                         />
                         <Image
-                            src='/assets/images/coach-akhil-img1.jpg'
+                            src='/assets/images/medal.png'
                             alt="background bottom"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale  object-[center_80%]"
                         />
                     </div>
 
@@ -45,10 +45,10 @@ export default function Founder() {
                     <div>
                         <span className="text-red-600 font-bold tracking-widest uppercase text-sm">Head Coach</span>
                         <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mt-2">
-                           Akhil K J
+                            Akhil K J
                         </h2>
                         <h3 className="text-2xl font-semibold text-gray-700 mt-2">
-                            Ayodhana Martial Arts 
+                            Ayodhana Martial Arts
                         </h3>
                     </div>
 
@@ -77,21 +77,22 @@ export default function Founder() {
                         </div>
                         <div className="mt-8">
                             <a
-                            href="https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ=="
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 via-red-600 to-yellow-500 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-500/40"
+                                href="https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ=="
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                /* Updated gradient: Red-900 to Red-600 to Black */
+                                className="inline-flex items-center gap-3 bg-gradient-to-r from-red-950 via-red-600 to-red-900 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-900/40 border border-red-800/30"
                             >
-                            {/* Instagram SVG Icon */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                className="w-5 h-5"
-                            >
-                                <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm8.5 2A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5zm-4.25 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.88a1.12 1.12 0 1 0 0 2.24 1.12 1.12 0 0 0 0-2.24z"/>
-                            </svg>
-                            Follow on Instagram
+                                {/* Instagram SVG Icon */}
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="w-5 h-5"
+                                >
+                                    <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm8.5 2A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5zm-4.25 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.88a1.12 1.12 0 1 0 0 2.24 1.12 1.12 0 0 0 0-2.24z" />
+                                </svg>
+                                Follow on Instagram
                             </a>
                         </div>
                     </div>

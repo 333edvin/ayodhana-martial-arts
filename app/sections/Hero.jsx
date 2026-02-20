@@ -26,11 +26,11 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 ">
-          <Link href="#programs">
+          <a href="#programs">
             <button className="btn w-full sm:w-auto px-8 py-5 bg-red-700 text-white rounded-md hover:bg-red-800 transition-all duration-300 font-bold uppercase tracking-widest text-sm shadow-lg active:scale-95">
               Explore Programs
             </button>
-          </Link>
+          </a>
           
          
         </div>

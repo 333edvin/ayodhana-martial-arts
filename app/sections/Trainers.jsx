@@ -209,7 +209,7 @@ export default function Trainers() {
                   href="https://www.instagram.com/shihan_sreejith?igsh=ZjFpMTRkYTA0czVz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 via-red-600 to-yellow-500 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-500/40"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-red-950 via-red-600 to-red-900 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-500/40"
                 >
                   {/* Instagram SVG Icon */}
                   <svg
