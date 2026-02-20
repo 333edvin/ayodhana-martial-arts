@@ -26,7 +26,7 @@ export default function Trainers() {
       role: "Head Coach, Ayodhana Fighters",
       description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
       image: "assets/images/trainer6.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ==", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/akhil_janardhanan_/", twitter: "#" },
       featured: true
     },
     {
@@ -35,7 +35,7 @@ export default function Trainers() {
       role: "Senior Coach",
       description: "5 years experience in Kickboxing & Muay Thai. 2-time Title Belt and 2-time National Champion.",
       image: "assets/images/trainer3.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/_.abhishek.cr_?igsh=bmFvdzU3cmNkMmg5", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/_.abhishek.cr_/", twitter: "#" },
       featured: false
     },
      {
@@ -44,7 +44,7 @@ export default function Trainers() {
       role: "Senior Coach",
       description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",
       image: "assets/images/trainer5.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/b_in_to_x?igsh=czc1NGUxMm95Y284", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/b_in_to_x/", twitter: "#" },
       featured: false
     },
     {
@@ -53,7 +53,7 @@ export default function Trainers() {
       role: "Fitness Trainer & National Champ",
       description: "5 years experience including international exposure in Dubai. 1-time National Champion dedicated to elite fitness.",
       image: 'assets/images/trainer1.jpeg',
-      socials: { facebook: "#", instagram: "https://www.instagram.com/_anil_babu._?igsh=Z3MyYzlodWN3ODJh", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/_anil_babu._/", twitter: "#" },
       featured: true
     },
     
@@ -64,7 +64,7 @@ export default function Trainers() {
       role: "Kickboxing Specialist",
       description: "3 years experience. Proud All Kerala Kickboxing National Champion 2024.",
       image: "assets/images/trainer2.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/mr.emmanueljoshy?igsh=YzlrMGY3Y3Ztdm5i", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/mr.emmanueljoshy/", twitter: "#" },
       featured: false
     },
     {
@@ -73,7 +73,7 @@ export default function Trainers() {
       role: "Senior Coach",
       description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
       image: "assets/images/trainer7.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/nisakh_11?igsh=MThsaDVoaDVhMzVkcQ==", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/nisakh_11/", twitter: "#" },
       featured: false
     },
    
@@ -84,7 +84,7 @@ export default function Trainers() {
       role: "Assistant Coach",
       description: "3 years experience helping students master fundamental techniques and physical conditioning.",
       image: "assets/images/trainer8.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/_adarshhhh_ns?igsh=Y2N3Zm84M251eG9u", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/_adarshhhh_ns/", twitter: "#" },
       featured: false
     },
     {
@@ -93,7 +93,7 @@ export default function Trainers() {
       role: "Assistant Coach",
       description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
       image: "assets/images/trainer4.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/aadh7thyann?igsh=MWFzZTQ4ZjRwdG01Mw==", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/aadh7thyann/", twitter: "#" },
       featured: true
     },
   ];
@@ -204,26 +204,29 @@ export default function Trainers() {
                 and elevating martial arts excellence across India through discipline, honor, and mastery.
               </p>
                 {/* Instagram Link */}
-              <div className="mt-8">
-                <a
-                  href="https://www.instagram.com/shihan_sreejith?igsh=ZjFpMTRkYTA0czVz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-gradient-to-r from-red-950 via-red-600 to-red-900 px-6 py-3 rounded-full text-white font-semibold tracking-wide shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-red-500/40"
+             <div className="mt-8">
+              <a
+                href="https://www.instagram.com/shihan_sreejith/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-3 
+                bg-gradient-to-r from-red-950 via-red-600 to-red-900 
+                px-6 py-3 rounded-full text-white font-semibold tracking-wide 
+                shadow-lg transition-all duration-300 
+                hover:scale-105 hover:shadow-red-500/40"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5"
                 >
-                  {/* Instagram SVG Icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm8.5 2A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5zm-4.25 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.88a1.12 1.12 0 1 0 0 2.24 1.12 1.12 0 0 0 0-2.24z"/>
-                  </svg>
+                  <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm8.5 2A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5zm-4.25 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.75-.88a1.12 1.12 0 1 0 0 2.24 1.12 1.12 0 0 0 0-2.24z"/>
+                </svg>
 
-                  Follow on Instagram
-                </a>
-              </div>
+                Follow on Instagram
+              </a>
+            </div>
               </div>
               
             </div>
