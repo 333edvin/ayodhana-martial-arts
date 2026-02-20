@@ -15,14 +15,14 @@ export default function Founder() {
                             alt="background top"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_38%]"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_38%]"
                         />
                         <Image
                             src='/assets/images/coach-akhil-img1.jpg'
                             alt="background bottom"
                             width={600}
                             height={150}
-                            className="founder-bg h-42 md:h-52 w-full object-fit rounded-lg grayscale object-[center_15%]"
+                            className="founder-bg h-42 md:h-52 w-full object-cover rounded-lg grayscale object-[center_15%]"
                         />
                     </div>
 
