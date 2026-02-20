@@ -143,7 +143,7 @@ export default function Layouts({ children }) {
                         <i className="fab fa-facebook-f" />
                     </a> */}
                     <a
-                        href="+919656571330"
+                        href="tel:+919656571330"
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
                         aria-label="YouTube"
                     >
