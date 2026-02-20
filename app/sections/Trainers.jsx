@@ -191,10 +191,10 @@ export default function Trainers() {
                   Founder – Ayodhana Martial Arts Association India
                 </p>
                 
-                <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify transition-all duration-300 hover:text-white">
-                  7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
-                  and elevating martial arts excellence across India through discipline, honor, and mastery.
-                </p>
+              <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify break-words hyphens-auto transition-all duration-300 hover:text-white">
+                7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
+                and elevating martial arts excellence across India through discipline, honor, and mastery.
+              </p>
                 {/* Instagram Link */}
               <div className="mt-8">
                 <a
