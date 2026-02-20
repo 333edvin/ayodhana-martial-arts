@@ -242,7 +242,7 @@ export default function Layouts({ children }) {
                     ))}
                     <li>
                         <a 
-                            href="https://www.instagram.com/ayodhana_fighters?igsh=MTdyMW9xdHd3OTN1cw==" 
+                            href="https://www.instagram.com/ayodhana_fighters/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:text-red-600 transition-colors flex items-center gap-2 text-sm"
