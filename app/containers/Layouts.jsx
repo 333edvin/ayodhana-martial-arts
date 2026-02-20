@@ -5,6 +5,7 @@ import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import Image from "next/image";
+import { FaInstagram, FaPhone, FaWhatsapp } from "react-icons/fa";
 
 export default function Layouts({ children }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -121,21 +122,21 @@ export default function Layouts({ children }) {
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
                         aria-label="Instagram"
                     >
-                        <i className="fab fa-instagram" />
+                        <FaInstagram className="text-lg md:text-xl" />
                     </a>
-                    <a
+                    {/* <a
                         href="#"
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
                         aria-label="Facebook"
                     >
                         <i className="fab fa-facebook-f" />
-                    </a>
+                    </a> */}
                     <a
-                        href="#"
+                        href="+919656571330"
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
                         aria-label="YouTube"
                     >
-                        <i className="fab fa-youtube" />
+                        <FaPhone className="text-lg md:text-xl" />
                     </a>
                     <a
                         href="https://wa.me/919656571330"
@@ -144,7 +145,7 @@ export default function Layouts({ children }) {
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
                         aria-label="WhatsApp"
                     >
-                        <i className="fab fa-whatsapp" />
+                        <FaWhatsapp className="text-lg md:text-xl" />
                     </a>
                 </div>
             </div>
