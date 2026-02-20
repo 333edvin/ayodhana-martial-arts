@@ -283,7 +283,7 @@ export default function Trainers() {
                           href={trainer.socials.instagram} 
                           className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
                           aria-label="Instagram"
-                          onClick={(e) => e.stopPropagation()}
+                          target="_blank"
                         >
                           <FaInstagram className="text-lg md:text-xl" />
                         </a>
