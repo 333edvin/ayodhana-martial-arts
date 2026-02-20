@@ -193,6 +193,14 @@ export default function Layouts({ children }) {
                 </h3>
                 <div className="flex flex-col gap-3 text-sm">
                     <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-gray-400">Tuesday</span>
+                        <span className="text-white font-bold">5:30 PM - 9:30 PM</span>
+                    </div>
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-gray-400">Thursday</span>
+                        <span className="text-white font-bold">5:30 PM - 9:30 PM</span>
+                    </div>
+                    <div className="flex justify-between border-b border-white/5 pb-2">
                         <span className="text-gray-400">Saturday</span>
                         <span className="text-white font-bold">4:30 PM - 9:30 PM</span>
                     </div>
