@@ -168,12 +168,12 @@ export default function Trainers() {
         </div>
 
         {/* Floating martial arts symbols */}
-        <div className="absolute w-full h-full" style={{ zIndex: -2 }}>
+        {/* <div className="absolute w-full h-full" style={{ zIndex: -2 }}>
           <div className="absolute top-0 left-0 text-4xl opacity-10">⚡</div>
           <div className="absolute bottom-0 right-0 text-4xl opacity-10">🥋</div>
           <div className="absolute top-1/2 left-0 text-4xl opacity-10">⚔️</div>
           <div className="absolute bottom-1/2 right-0 text-4xl opacity-10"></div>
-        </div>
+        </div> */}
 
         {/* Main founder image */}
         <img
