@@ -127,7 +127,7 @@ export default function Layouts({ children }) {
                 </p>
                 <div className="flex gap-4 mt-2">
                     <a
-                        href="https://www.instagram.com/ayodhana_fighters?igsh=MTdyMW9xdHd3OTN1cw=="
+                        href="https://www.instagram.com/ayodhana_fighters/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300"
@@ -242,7 +242,7 @@ export default function Layouts({ children }) {
                     ))}
                     <li>
                         <a 
-                            href="https://www.instagram.com/ayodhana_fighters?igsh=MTdyMW9xdHd3OTN1cw==" 
+                            href="https://www.instagram.com/ayodhana_fighters/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:text-red-600 transition-colors flex items-center gap-2 text-sm"
@@ -341,7 +341,7 @@ export default function Layouts({ children }) {
             <p>© 2026 Ayodhana Fighters Martial Arts Academy. All rights reserved.</p>
             <div className="flex items-center gap-4">
                 <a 
-                    href="https://www.instagram.com/ayodhana_fighters?igsh=MTdyMW9xdHd3OTN1cw==" 
+                    href="https://www.instagram.com/ayodhana_fighters/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-red-500 transition-colors"
