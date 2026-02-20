@@ -81,7 +81,6 @@ export default function Founder() {
                             href="https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ=="
                             className="text-white hover:text-red-400 transition-colors p-2 bg-white/5 rounded-full hover:bg-white/20" 
                             aria-label="Instagram"
-                            onClick={(e) => e.stopPropagation()}
                         >
                             <FaInstagram className="text-lg md:text-xl" />
                         </a>
