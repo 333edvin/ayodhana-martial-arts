@@ -39,7 +39,7 @@ export default function Trainers() {
       featured: false
     },
      {
-      id: 4,
+      id: 3,
       name: "Binto xavier",
       role: "Senior Coach",
       description: "3 years experience and 1-time National Champion focusing on advanced combat techniques.",

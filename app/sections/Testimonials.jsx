@@ -35,7 +35,7 @@ const testimonialsData = [
   },
   {
     id: 5,
-    name: "Athul mR",
+    name: "Athul M R",
     content: "Training here has improved my fitness, boosted my confidence, and reduced my stress levels. Also several members of the club have won state and national championships, which speaks volumes about the quality of training. I’m highly recommending training under Akhil Sir who are seeking to improve own Health and have a passion in Martial arts.",
     rating: 5,
     martialArt: "Junior Program"
