@@ -60,7 +60,7 @@ export default function Trainers() {
     
     {
       id: 5,
-      name: "Emmanuval joshy",
+      name: "Emmanuel joshy",
       role: "Kickboxing Specialist",
       description: "3 years experience. Proud All Kerala Kickboxing National Champion 2024.",
       image: "assets/images/trainer2.jpeg",
