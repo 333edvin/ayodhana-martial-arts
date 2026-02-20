@@ -25,7 +25,7 @@ export default function Trainers() {
       name: "Akhil kj",
       role: "Head Coach, Ayodhana Fighters",
       description: "Certified Kickboxing & Muay Thai trainer and the strategic lead for Ayodhana Fighters.",
-      image: "assets/images/trainer4.jpeg",
+      image: "assets/images/trainer6.jpeg",
       socials: { facebook: "#", instagram: "https://www.instagram.com/akhil_janardhanan_?igsh=MXZubjhnMjJlMW90YQ==", twitter: "#" },
       featured: true
     },
