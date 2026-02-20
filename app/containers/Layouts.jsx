@@ -82,7 +82,7 @@ export default function Layouts({ children }) {
 
             {/* DRAWER OVERLAY */}
             {isOpen && (
-                <div onClick={toggleMenu} className="fixed inset-0 z-[101] bg-black/60 backdrop-blur-sm lg:hidden" style={{ zIndex: 100 }} />
+                <div onClick={toggleMenu} className="fixed inset-0 z-[101] bg-black/60 backdrop-blur-sm lg:hidden" />
             )}
             {children}
             <div className="flex flex-col gap-2 p-2 fixed bottom-2 right-2 md:bottom-5 md:right-5 text-white">

@@ -118,89 +118,90 @@ export default function Trainers() {
   return (
     <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
       <div className="mx-auto">
-  <div className="relative w-full min-h-screen overflow-hidden">
-  {/* 🔥 CARD WRAPPER */}
-  <div className="relative flex items-center justify-center min-h-screen px-6" style={{ zIndex: 5 }}>
-    <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
-      
-      {/* Border */}
-      <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
-      
-      {/* Founder Image with dragon and martial arts elements */}
-      <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative">
-        {/* Dragon SVG behind the image */}
-        <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: -5 }}>
-          <svg 
-            viewBox="0 0 200 200" 
-            className="w-full h-full text-red-600/20"
-            fill="currentColor"
-          >
-            {/* Dragon silhouette */}
-            <path d="M100 20 L120 50 L140 40 L150 60 L140 80 L160 90 L150 110 L170 120 L160 140 L140 130 L120 150 L100 140 L80 150 L60 140 L40 130 L30 120 L50 110 L40 90 L60 80 L50 60 L70 40 L90 50 L100 20" 
-                  fill="currentColor"/>
-            {/* Dragon eye */}
-            <circle cx="100" cy="70" r="5" fill="yellow"/>
-            {/* Dragon claws */}
-            <path d="M70 100 L60 120 L70 110" fill="currentColor"/>
-            <path d="M130 100 L140 120 L130 110" fill="currentColor"/>
-            {/* Dragon flame */}
-            <path d="M100 140 L110 160 L100 170 L90 160 L100 140" fill="orange"/>
-          </svg>
+  
+        {/* Founder Section - Separate container without min-h-screen */}
+        <div className="relative w-full mb-16 overflow-hidden">
+          {/* 🔥 CARD WRAPPER */}
+          <div className="relative flex items-center justify-center px-6" style={{ zIndex: 5 }}>
+            <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+              
+              {/* Border */}
+              <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
+              
+              {/* Founder Image with dragon and martial arts elements */}
+              <div className="w-72 h-72 md:w-[420px] md:h-[420px] shrink-0 relative">
+                {/* Dragon SVG behind the image */}
+                <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: -5 }}>
+                  <svg 
+                    viewBox="0 0 200 200" 
+                    className="w-full h-full text-red-600/20"
+                    fill="currentColor"
+                  >
+                    {/* Dragon silhouette */}
+                    <path d="M100 20 L120 50 L140 40 L150 60 L140 80 L160 90 L150 110 L170 120 L160 140 L140 130 L120 150 L100 140 L80 150 L60 140 L40 130 L30 120 L50 110 L40 90 L60 80 L50 60 L70 40 L90 50 L100 20" 
+                          fill="currentColor"/>
+                    {/* Dragon eye */}
+                    <circle cx="100" cy="70" r="5" fill="yellow"/>
+                    {/* Dragon claws */}
+                    <path d="M70 100 L60 120 L70 110" fill="currentColor"/>
+                    <path d="M130 100 L140 120 L130 110" fill="currentColor"/>
+                    {/* Dragon flame */}
+                    <path d="M100 140 L110 160 L100 170 L90 160 L100 140" fill="orange"/>
+                  </svg>
+                </div>
+
+                {/* Martial arts circle (Yin Yang inspired) */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-20" style={{ zIndex: -4 }}>
+                  <svg viewBox="0 0 200 200" className="w-4/5 h-4/5 text-red-500">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M100 20 A60 60 0 0 1 100 140 A60 60 0 0 1 100 20" fill="currentColor" opacity="0.5"/>
+                    <circle cx="100" cy="80" r="15" fill="white"/>
+                    <circle cx="100" cy="120" r="15" fill="currentColor"/>
+                  </svg>
+                </div>
+
+                {/* Japanese calligraphy style brush strokes */}
+                <div className="absolute inset-0" style={{ zIndex: -3 }}>
+                  <svg viewBox="0 0 200 200" className="w-full h-full opacity-10">
+                    <path d="M30 50 Q80 30, 130 50 T170 30" stroke="red" strokeWidth="3" fill="none"/>
+                    <path d="M40 120 Q90 100, 140 120 T180 100" stroke="red" strokeWidth="3" fill="none"/>
+                    <path d="M20 170 Q70 150, 120 170 T160 150" stroke="red" strokeWidth="3" fill="none"/>
+                  </svg>
+                </div>  
+
+                {/* Main founder image */}
+                <img
+                  src="/assets/images/founder.png"
+                  alt="Shihan Sreejith"
+                  className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-110 relative"
+                  style={{ zIndex: 10 }}
+                />
+                
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-full bg-red-500/20 blur-3xl" style={{ zIndex: -1 }}></div>
+              </div>
+              
+              {/* Founder Info */}
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white transition-all duration-300 hover:text-red-500">
+                  Shihan Sreejith
+                </h3>
+                
+                <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
+                  Founder – Ayodhana Martial Arts Association India
+                </p>
+                
+                <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify transition-all duration-300 hover:text-white">
+                  7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
+                  and elevating martial arts excellence across India through discipline, honor, and mastery.
+                </p>
+              </div>
+              
+            </div>
+          </div>
         </div>
 
-        {/* Martial arts circle (Yin Yang inspired) */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20" style={{ zIndex: -4 }}>
-          <svg viewBox="0 0 200 200" className="w-4/5 h-4/5 text-red-500">
-            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2"/>
-            <path d="M100 20 A60 60 0 0 1 100 140 A60 60 0 0 1 100 20" fill="currentColor" opacity="0.5"/>
-            <circle cx="100" cy="80" r="15" fill="white"/>
-            <circle cx="100" cy="120" r="15" fill="currentColor"/>
-          </svg>
-        </div>
-
-        {/* Japanese calligraphy style brush strokes */}
-        <div className="absolute inset-0" style={{ zIndex: -3 }}>
-          <svg viewBox="0 0 200 200" className="w-full h-full opacity-10">
-            <path d="M30 50 Q80 30, 130 50 T170 30" stroke="red" strokeWidth="3" fill="none"/>
-            <path d="M40 120 Q90 100, 140 120 T180 100" stroke="red" strokeWidth="3" fill="none"/>
-            <path d="M20 170 Q70 150, 120 170 T160 150" stroke="red" strokeWidth="3" fill="none"/>
-          </svg>
-        </div>  
-
-        {/* Main founder image */}
-        <img
-          src="/assets/images/founder.png"
-          alt="Shihan Sreejith"
-          className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-110 relative"
-          style={{ zIndex: 10 }}
-        />
-        
-        {/* Glow effect */}
-        <div className="absolute inset-0 rounded-full bg-red-500/20 blur-3xl" style={{ zIndex: -1 }}></div>
-      </div>
-      
-      {/* Founder Info */}
-      <div className="text-center md:text-left">
-        <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white transition-all duration-300 hover:text-red-500">
-          Shihan Sreejith
-        </h3>
-        
-        <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
-          Founder – Ayodhana Martial Arts Association India
-        </p>
-        
-        <p className="text-gray-300 mt-6 max-w-2xl text-base md:text-xl leading-relaxed text-justify transition-all duration-300 hover:text-white">
-          7th Dan Black Belt and visionary leader dedicated to building disciplined fighters 
-          and elevating martial arts excellence across India through discipline, honor, and mastery.
-        </p>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-  {/* Section Title BELOW Founder */}
-
+        {/* Section Title BELOW Founder */}
         <div className="section-title text-center mb-10 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600">Learn from certified martial arts instructors</p>
