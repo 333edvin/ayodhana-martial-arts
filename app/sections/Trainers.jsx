@@ -53,7 +53,7 @@ export default function Trainers() {
       role: "Fitness Trainer & National Champ",
       description: "5 years experience including international exposure in Dubai. 1-time National Champion dedicated to elite fitness.",
       image: 'assets/images/trainer1.jpeg',
-      socials: { facebook: "#", instagram: "#", twitter: "#" },
+      socials: { facebook: "#", instagram: "https://www.instagram.com/_anil_babu._?igsh=Z3MyYzlodWN3ODJh", twitter: "#" },
       featured: true
     },
     
