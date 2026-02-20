@@ -31,7 +31,7 @@ export default function Founder() {
                     {/* Main Founder Image: Centered Overlay */}
                     <div className="absolute inset-0 mb-8 md:mb-0 flex items-center justify-center">
                         <Image
-                            src='/assets/images/coach-akhil-main-image.png'
+                            src='/assets/images/coach-akhil-main-image.jpg'
                             alt="Founder"
                             width={400}
                             height={400}
