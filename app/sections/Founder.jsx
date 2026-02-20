@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Founder() {
     return (
