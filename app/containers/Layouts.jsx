@@ -24,13 +24,25 @@ export default function Layouts({ children }) {
             <header className="fixed top-0 z-40 w-full border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
                 <div className="container mx-auto flex h-auto py-5 items-center justify-between px-3">
                     {/* LOGO */}
-                    <div className="text-xl flex items-center gap-2 md:gap-5 font-black tracking-tighter sm:text-2xl italic">
-                        <Image width={50} height={50} src={'/assets/webp/AYODHANA.webp'} alt="logo" className="rounded-full" />
-                        <p>
+                    <a 
+                    href="https://www.ayodhanafighters.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                    >
+                        <div className="text-xl flex items-center gap-2 md:gap-5 font-black tracking-tighter sm:text-2xl italic">
+                            <Image
+                            width={50}
+                            height={50}
+                            src="/assets/webp/AYODHANA.webp"
+                            alt="logo"
+                            className="rounded-full"
+                            />
+                            <p>
                             AYODHANA<span className="text-red-600">FIGHTERS</span>
-                        </p>
-                    </div>
-
+                            </p>
+                        </div>
+                    </a>
                     {/* DESKTOP MENU */}
                     <ul className="hidden space-x-8 lg:flex gap-4">
                         {navLinks.map((link) => (
