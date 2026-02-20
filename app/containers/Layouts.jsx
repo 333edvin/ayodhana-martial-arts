@@ -85,7 +85,7 @@ export default function Layouts({ children }) {
                 <div onClick={toggleMenu} className="fixed inset-0 z-[101] bg-black/60 backdrop-blur-sm lg:hidden" />
             )}
             {children}
-            <div className="flex flex-col gap-2 p-2 fixed bottom-2 right-2 md:bottom-5 md:right-5 text-white">
+            <div className="flex flex-col gap-2 p-2 fixed bottom-2 right-2 md:bottom-5 md:right-5 text-white z-40">
                 <a href="tel:+919656571330" className="hover:text-red-500 transition-colors block">
                 <p className="p-3 rounded-full bg-blue-500 text-xl md:text-2xl"><MdCall /></p>
                 </a>
