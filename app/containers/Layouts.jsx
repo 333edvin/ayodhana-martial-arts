@@ -208,10 +208,10 @@ export default function Layouts({ children }) {
                         <span className="text-gray-400">Sunday</span>
                         <span className="text-white font-bold">4:30 PM - 9:30 PM</span>
                     </div>
-                    <div className="flex justify-between text-red-500/80 pt-2">
+                    {/* <div className="flex justify-between text-red-500/80 pt-2">
                         <span>Mon - Fri</span>
                         <span className="italic">Closed</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
