@@ -69,7 +69,7 @@ export default function Trainers() {
     },
     {
       id: 6,
-      name: "Nishak Tk",
+      name: "Nishakh Tk",
       role: "Senior Coach",
       description: "4 years experience. Primal Title Belt Champion and WAKO National Champion 2025.",
       image: "assets/images/trainer7.jpeg",
@@ -89,7 +89,7 @@ export default function Trainers() {
     },
     {
       id: 8,
-      name: "Adhithyan pv",
+      name: "Adithyan pv",
       role: "Assistant Coach",
       description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
       image: "assets/images/trainer4.jpeg",
