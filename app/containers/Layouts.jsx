@@ -5,6 +5,7 @@ import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { MdCall } from "react-icons/md";
 import Image from "next/image";
 import { FaInstagram, FaPhone, FaWhatsapp } from "react-icons/fa";
+{/* force redeploy */}
 
 export default function Layouts({ children }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -368,3 +369,4 @@ export default function Layouts({ children }) {
         </>
     )
 }
+
