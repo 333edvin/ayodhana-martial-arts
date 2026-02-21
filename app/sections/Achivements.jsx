@@ -39,11 +39,11 @@ const events = [
         shortDescription: "Professional Title Belt Champion – Abhishek CR",
         description:
             "Abhishek CR claimed the prestigious FL Muay Thai Professional Title Belt in 2025, delivering an outstanding performance marked by power, precision, and elite fight strategy. This professional championship victory highlights his dedication, warrior spirit, and mastery in competitive Muay Thai.",
-        mainImage: "/assets/images/fl_muay_thai/event1-1.jpeg",
+        mainImage: "/assets/images/fl_muay_thai/event1-3.jpeg",
         images: [
-            { id: 1, src: '/assets/images/fl_muay_thai/event1-1.jpeg', alt: 'Black Belt Ceremony group photo' },
+            { id: 1, src: '/assets/images/fl_muay_thai/event1-3.jpeg', alt: 'Black Belt Ceremony group photo' },
             { id: 2, src: '/assets/images/fl_muay_thai/event1-2.jpeg', alt: 'Students receiving belts' },
-            { id: 3, src: '/assets/images/fl_muay_thai/event1-3.jpeg', alt: 'Certificates presentation' },
+            { id: 3, src: '/assets/images/fl_muay_thai/event1-1.jpeg', alt: 'Certificates presentation' },
             { id: 4, src: '/assets/images/fl_muay_thai/event1-4.jpeg', alt: 'Group celebration' },
             { id: 5, src: '/assets/images/fl_muay_thai/event1-5.jpeg', alt: 'Group celebration' },
             { id: 6, src: '/assets/images/fl_muay_thai/event1-6.jpeg', alt: 'Group celebration' },
