@@ -83,11 +83,11 @@ export default function Founder() {
                             href="https://www.instagram.com/akhil_janardhanan_/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex justify-center items-center gap-3 
+                            className={`w-full sm:w-auto inline-flex justify-center items-center gap-3 
                             bg-gradient-to-r from-red-950 via-red-600 to-red-900 
                             px-6 py-3 rounded-full text-white font-semibold tracking-wide 
                             shadow-lg transition-all duration-300 
-                            hover:scale-105 hover:shadow-red-500/40"
+                            hover:scale-105 hover:shadow-red-500/40`}
                             >
                                 <svg
                                 xmlns="http://www.w3.org/2000/svg"
