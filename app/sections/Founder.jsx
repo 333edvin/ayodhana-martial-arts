@@ -80,7 +80,7 @@ export default function Founder() {
 
                          <div className="mt-8">
                             <a
-                            href="https://www.instagram.com/akhil_janardhanan_/"
+                            href="https://www.instagram.com/akhil_janardhanan_"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`w-full sm:w-auto inline-flex justify-center items-center gap-3 
