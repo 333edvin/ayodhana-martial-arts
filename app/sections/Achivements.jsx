@@ -131,7 +131,7 @@ export default function Achievements() {
 
     return (
         <>
-            <section className="bg-gradient-to-b from-gray-50 to-white w-full py-16">
+            <section className="bg-gradient-to-b from-gray-50 to-white w-full py-16" id='achievements'>
 
                 <div className="text-center mb-12">
                     <p className="text-sm uppercase tracking-[0.3em] text-gray-500">

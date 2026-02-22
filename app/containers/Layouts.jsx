@@ -15,6 +15,7 @@ export default function Layouts({ children }) {
     const navLinks = [
         { name: "Home", href: "#home" },
         { name: "Programs", href: "#programs" },
+        { name: "Achievements", href: "#achievements" },
         { name: "Trainers", href: "#trainers" },
         { name: "Schedule", href: "#schedule" },
         { name: "Testimonials", href: "#testimonials" },
