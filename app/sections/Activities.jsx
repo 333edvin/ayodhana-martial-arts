@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 const activities = [
-    { title: "Boxing", desc: "Master the sweet science of punching.", img: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800" },
-    { title: "Kickboxing", desc: "Dynamic strikes and explosive power.", img: "https://cdn.onefc.com/wp-content/uploads/2023/10/image-2-1200x800.png" },
-    { title: "Muay Thai", desc: "The deadly art of eight limbs.", img: "https://tigrethai.com/cdn/shop/articles/muaythai-picture.jpg?v=1612703279&width=1100" },
-    { title: "Karate", desc: "Traditional discipline and precision.", img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800" },
-    { title: "Self Defence", desc: "Practical techniques for safety.", img: "https://www.topsante.co.uk/wp-content/uploads/sites/8/2022/06/shutterstock_1342796243.png" },
-    { title: "Weight Loss", desc: "Transform your body with intensity.", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" },
-    { title: "Flips & Parkour", desc: "Agility beyond boundaries.", img: "https://static.wixstatic.com/media/34d992_594374d128664bda8929bde334290b72~mv2.jpg/v1/fill/w_980,h_428,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/34d992_594374d128664bda8929bde334290b72~mv2.jpg" },
+    { title: "Boxing", desc: "Master the sweet science of punching.", img: "assets/images/activities/boxing.jpg" },
+    { title: "Kickboxing", desc: "Dynamic strikes and explosive power.", img: "assets/images/activities/kick_boxing.png" },
+    { title: "Muay Thai", desc: "The deadly art of eight limbs.", img: "assets/images/activities/muay_thai.jpg" },
+    { title: "Karate", desc: "Traditional discipline and precision.", img: "assets/images/activities/karate.jpg" },
+    { title: "Self Defence", desc: "Practical techniques for safety.", img: "assets/images/activities/self_defence.png" },
+    { title: "Weight Loss", desc: "Transform your body with intensity.", img: "assets/images/activities/weight_loss.png" },
+    { title: "Flips & Parkour", desc: "Agility beyond boundaries.", img: "assets/images/activities/parkour.jpg" },
 ];
 
 export default function Activities() {
