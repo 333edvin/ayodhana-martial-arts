@@ -235,7 +235,7 @@ export default function Layouts({ children }) {
                     Quick Links
                 </h3>
                 <ul className="grid grid-cols-1 gap-3 text-sm">
-                    {['Home', 'Programs', 'Trainers', 'Schedule', 'Testimonials'].map((link) => (
+                    {['Home', 'Programs','Achievements' ,'Trainers', 'Schedule', 'Testimonials'].map((link) => (
                         <li key={link}>
                             <a href={`#${link.toLowerCase()}`} className="hover:text-red-600 transition-colors flex items-center gap-2">
                                 <span className="text-[10px]">▶</span> {link}
