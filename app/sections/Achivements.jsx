@@ -45,7 +45,20 @@ const events = [
             { id: 2, src: '/assets/images/fl_muay_thai/event1-2.jpeg', alt: 'Belt Ceremony' },
             { id: 3, src: '/assets/images/fl_muay_thai/event1-1.jpeg', alt: 'Certificates Presentation' },
             { id: 4, src: '/assets/images/fl_muay_thai/event1-4.jpeg', alt: 'Victory Celebration' },
-        ]
+        ],
+    },
+    {
+        id: 4,
+        name: 'All India Full Contact Heavyweight Championship – 2025',
+        shortDescription: 'Champion – Anil Babu | Kaju Kado Karate',
+        description:
+            'Anil Babu secured the All India Full Contact Heavyweight Championship title in 2025.',
+        mainImage: '/assets/images/kaju_kado_karate/image1.png',
+        images: [
+            { id: 1, src: '/assets/images/kaju_kado_karate/image1.png', alt: 'Heavyweight Championship Moment' },
+            { id: 2, src: '/assets/images/kaju_kado_karate/image2.png', alt: 'National Award Ceremony' },
+            { id: 3, src: '/assets/images/kaju_kado_karate/image3.png', alt: 'Victory Recognition' },
+        ],
     }
 ]
 
@@ -58,16 +71,20 @@ export default function Achievements() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(null)
     const [currentImages, setCurrentImages] = useState([])
 
+    // Lock scroll properly
+    useEffect(() => {
+        document.body.style.overflow =
+            isEventModalOpen || isImageModalOpen ? 'hidden' : 'auto'
+    }, [isEventModalOpen, isImageModalOpen])
+
     const openEventModal = (event) => {
         setSelectedEvent(event)
         setIsEventModalOpen(true)
-        document.body.style.overflow = 'hidden'
     }
 
     const closeEventModal = () => {
         setIsEventModalOpen(false)
         setSelectedEvent(null)
-        document.body.style.overflow = 'unset'
     }
 
     const openImageModal = (index, images) => {
@@ -79,6 +96,7 @@ export default function Achievements() {
     const closeImageModal = () => {
         setIsImageModalOpen(false)
         setSelectedImageIndex(null)
+        setCurrentImages([])
     }
 
     const showNextImage = () => {
@@ -93,6 +111,7 @@ export default function Achievements() {
         )
     }
 
+    // Keyboard support
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
@@ -154,12 +173,12 @@ export default function Achievements() {
 
             {/* EVENT MODAL */}
             {isEventModalOpen && selectedEvent && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={closeEventModal}>
-                    <div className="relative bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+                    <div className="relative bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
 
                         <button
                             onClick={closeEventModal}
-                            className="absolute top-4 right-4 bg-white w-10 h-10 rounded-full shadow flex items-center justify-center"
+                            className="absolute top-4 right-4 bg-white w-10 h-10 rounded-full shadow flex items-center justify-center z-20"
                         >
                             ✕
                         </button>
@@ -205,49 +224,42 @@ export default function Achievements() {
                 </div>
             )}
 
-            {/* IMAGE VIEWER MODAL */}
+            {/* IMAGE MODAL */}
             {isImageModalOpen && selectedImageIndex !== null && (
-                <div
-                    className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95"
-                    onClick={closeImageModal}
-                >
-                    <div
-                        className="relative max-w-6xl w-full h-[90vh] flex items-center justify-center"
-                        onClick={(e) => e.stopPropagation()}
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95">
+
+                    <button
+                        onClick={closeImageModal}
+                        className="absolute top-6 right-6 bg-white w-10 h-10 rounded-full flex items-center justify-center z-20"
                     >
-                        <button
-                            onClick={closeImageModal}
-                            className="absolute top-6 right-6 bg-white w-10 h-10 rounded-full flex items-center justify-center"
-                        >
-                            ✕
-                        </button>
+                        ✕
+                    </button>
 
-                        <button
-                            onClick={showPrevImage}
-                            className="absolute left-6 text-white text-5xl font-bold"
-                        >
-                            ‹
-                        </button>
+                    <button
+                        onClick={showPrevImage}
+                        className="absolute left-6 text-white text-5xl font-bold z-20"
+                    >
+                        ‹
+                    </button>
 
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={currentImages[selectedImageIndex].src}
-                                alt={currentImages[selectedImageIndex].alt}
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
+                    <div className="relative w-full h-[90vh] max-w-6xl">
+                        <Image
+                            src={currentImages[selectedImageIndex].src}
+                            alt={currentImages[selectedImageIndex].alt}
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
 
-                        <button
-                            onClick={showNextImage}
-                            className="absolute right-6 text-white text-5xl font-bold"
-                        >
-                            ›
-                        </button>
+                    <button
+                        onClick={showNextImage}
+                        className="absolute right-6 text-white text-5xl font-bold z-20"
+                    >
+                        ›
+                    </button>
 
-                        <div className="absolute bottom-6 text-white text-sm">
-                            {selectedImageIndex + 1} / {currentImages.length}
-                        </div>
+                    <div className="absolute bottom-6 text-white text-sm">
+                        {selectedImageIndex + 1} / {currentImages.length}
                     </div>
                 </div>
             )}
