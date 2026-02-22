@@ -7,7 +7,7 @@ const activities = [
     { title: "Muay Thai", desc: "The deadly art of eight limbs.", img: "assets/images/activities/muay_thai.jpg" },
     { title: "Karate", desc: "Traditional discipline and precision.", img: "assets/images/activities/karate.jpg" },
     { title: "Self Defence", desc: "Practical techniques for safety.", img: "assets/images/activities/self_defence.png" },
-    { title: "Weight Loss", desc: "Transform your body with intensity.", img: "assets/images/activities/weight_loss.png" },
+    { title: "Weight Loss", desc: "Transform your body with intensity.", img: "assets/images/activities/weight_loss.jpg" },
     { title: "Flips & Parkour", desc: "Agility beyond boundaries.", img: "assets/images/activities/parkour.jpg" },
 ];
 
