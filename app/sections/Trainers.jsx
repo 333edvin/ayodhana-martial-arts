@@ -234,11 +234,18 @@ export default function Trainers() {
         </div>
 
         {/* Section Title BELOW Founder */}
-        <div className="section-title text-center mb-10 md:mb-16">
+        {/* <div className="section-title text-center mb-10 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-secondary">Our Expert Trainers</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600">Learn from certified martial arts instructors</p>
+        </div> */}
+        <div className="text-center mb-12">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+              Learn from certified martial arts instructors
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4">
+              Our Expert Trainers
+          </h2>
         </div>
-
         <div className="flex justify-center">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-[360px] md:w-6xl">
             {trainers.map((trainer) => (

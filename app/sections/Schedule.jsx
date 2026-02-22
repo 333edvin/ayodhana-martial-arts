@@ -59,15 +59,22 @@ export default function Schedule() {
       <div className="max-w-[1400px] mx-auto px-4">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Weekly Training Schedule
           </h2>
           <p className="text-lg text-gray-600">
             Tuesday, Thursday, Saturday & Sunday
           </p>
+        </div> */}
+        <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+                Tuesday, Thursday, Saturday & Sunday
+            </p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4">
+                Weekly Training Schedule
+            </h2>
         </div>
-
         {/* ================= DESKTOP TABLE ================= */}
         <div className="hidden lg:block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
           <div className="overflow-x-auto">
