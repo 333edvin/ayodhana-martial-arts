@@ -9,7 +9,7 @@ const events = [
         name: 'Oxford Professional Championship – 2025',
         shortDescription: 'FL Muay Thai Professional Title Belt – Abhishek CR',
         description:
-            'Abhishek CR emerged victorious at the Oxford Professional Championship 2025, claiming the prestigious FL Muay Thai Professional Title Belt. This championship victory showcases exceptional skill, dedication, and mastery in professional Muay Thai.',
+            'Abhishek CR emerged victorious at the Oxford Professional Championship 2025, claiming the prestigious FL Muay Thai Professional Title Belt.',
         mainImage: '/assets/images/oxford_championship/event1-7.jpg',
         images: [
             { id: 1, src: '/assets/images/oxford_championship/event1-7.jpg', alt: 'Championship Celebration' },
@@ -24,7 +24,7 @@ const events = [
         name: 'Primal Kick Boxing Championship – Title Belt',
         shortDescription: 'Title Belt Champion – Nishak TK',
         description:
-            'Nishak TK demonstrated exceptional prowess at the Primal Kick Boxing Championship, securing the prestigious title belt. This victory highlights strength, technical excellence, and competitive determination.',
+            'Nishak TK demonstrated exceptional prowess at the Primal Kick Boxing Championship, securing the prestigious title belt.',
         mainImage: '/assets/images/primal_title_belt/event2-1.jpeg',
         images: [
             { id: 1, src: '/assets/images/primal_title_belt/event2-1.jpeg', alt: 'Team Recognition' },
@@ -38,38 +38,25 @@ const events = [
         name: 'FL Muay Thai Professional Championship – 2025',
         shortDescription: 'Professional Title Belt – Abhishek CR',
         description:
-            'Abhishek CR claimed the FL Muay Thai Professional Title Belt in 2025 with elite performance, precision, and strategic dominance. A defining milestone in professional Muay Thai excellence.',
+            'Abhishek CR claimed the FL Muay Thai Professional Title Belt in 2025 with elite performance and strategic dominance.',
         mainImage: '/assets/images/fl_muay_thai/event1-3.jpeg',
         images: [
             { id: 1, src: '/assets/images/fl_muay_thai/event1-3.jpeg', alt: 'Championship Moment' },
             { id: 2, src: '/assets/images/fl_muay_thai/event1-2.jpeg', alt: 'Belt Ceremony' },
             { id: 3, src: '/assets/images/fl_muay_thai/event1-1.jpeg', alt: 'Certificates Presentation' },
             { id: 4, src: '/assets/images/fl_muay_thai/event1-4.jpeg', alt: 'Victory Celebration' },
-            { id: 5, src: '/assets/images/fl_muay_thai/event1-5.jpeg', alt: 'Professional Recognition' },
-            { id: 6, src: '/assets/images/fl_muay_thai/event1-6.jpeg', alt: 'Elite Performance' },
-        ],
-    },
-    {
-        id: 4,
-        name: 'All India Full Contact Heavyweight Championship – 2025',
-        shortDescription: 'Champion – Anil Babu | Kaju Kado Karate',
-        description:
-            'Anil Babu secured the All India Full Contact Heavyweight Championship title in 2025. Demonstrating exceptional strength, technique, and discipline, this victory marks a proud national-level achievement.',
-        mainImage: '/assets/images/kaju_kado_karate/image1.png',
-        images: [
-            { id: 1, src: '/assets/images/kaju_kado_karate/image1.png', alt: 'Heavyweight Championship Moment' },
-            { id: 2, src: '/assets/images/kaju_kado_karate/image2.png', alt: 'National Award Ceremony' },
-            { id: 3, src: '/assets/images/kaju_kado_karate/image3.png', alt: 'Victory Recognition' },
-        ],
+        ]
     }
 ]
 
 export default function Achievements() {
 
     const [selectedEvent, setSelectedEvent] = useState(null)
-    const [selectedImage, setSelectedImage] = useState(null)
     const [isEventModalOpen, setIsEventModalOpen] = useState(false)
+
     const [isImageModalOpen, setIsImageModalOpen] = useState(false)
+    const [selectedImageIndex, setSelectedImageIndex] = useState(null)
+    const [currentImages, setCurrentImages] = useState([])
 
     const openEventModal = (event) => {
         setSelectedEvent(event)
@@ -83,14 +70,27 @@ export default function Achievements() {
         document.body.style.overflow = 'unset'
     }
 
-    const openImageModal = (image, eventName) => {
-        setSelectedImage({ ...image, eventName })
+    const openImageModal = (index, images) => {
+        setSelectedImageIndex(index)
+        setCurrentImages(images)
         setIsImageModalOpen(true)
     }
 
     const closeImageModal = () => {
         setIsImageModalOpen(false)
-        setSelectedImage(null)
+        setSelectedImageIndex(null)
+    }
+
+    const showNextImage = () => {
+        setSelectedImageIndex((prev) =>
+            prev === currentImages.length - 1 ? 0 : prev + 1
+        )
+    }
+
+    const showPrevImage = () => {
+        setSelectedImageIndex((prev) =>
+            prev === 0 ? currentImages.length - 1 : prev - 1
+        )
     }
 
     useEffect(() => {
@@ -99,17 +99,22 @@ export default function Achievements() {
                 if (isImageModalOpen) closeImageModal()
                 else if (isEventModalOpen) closeEventModal()
             }
+
+            if (isImageModalOpen) {
+                if (e.key === 'ArrowRight') showNextImage()
+                if (e.key === 'ArrowLeft') showPrevImage()
+            }
         }
+
         window.addEventListener('keydown', handleKeyDown)
         return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [isEventModalOpen, isImageModalOpen])
+    }, [isImageModalOpen, currentImages])
 
     return (
         <>
-            <section className="bg-gradient-to-b from-gray-50 to-white w-full" id="achievements">
+            <section className="bg-gradient-to-b from-gray-50 to-white w-full py-16">
 
-                {/* Official Header */}
-                <div className="text-center py-16">
+                <div className="text-center mb-12">
                     <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
                         Official Championship Archive
                     </p>
@@ -118,13 +123,12 @@ export default function Achievements() {
                     </h2>
                 </div>
 
-                {/* Events Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
                     {events.map((event) => (
                         <div
                             key={event.id}
                             onClick={() => openEventModal(event)}
-                            className="group relative h-[450px] md:h-[550px] overflow-hidden cursor-pointer"
+                            className="group relative h-[450px] overflow-hidden cursor-pointer rounded-xl"
                         >
                             <Image
                                 src={event.mainImage}
@@ -134,15 +138,12 @@ export default function Achievements() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
 
-                            <div className="absolute bottom-0 p-8">
-                                <h3 className="text-2xl md:text-3xl font-extrabold uppercase tracking-wide text-white mb-3">
+                            <div className="absolute bottom-0 p-6">
+                                <h3 className="text-2xl font-extrabold uppercase tracking-wide text-white mb-3">
                                     {event.name}
                                 </h3>
-
-                                {/* Gold Accent Line */}
                                 <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mb-4"></div>
-
-                                <p className="text-white/90 text-sm md:text-base">
+                                <p className="text-white/90 text-sm">
                                     {event.shortDescription}
                                 </p>
                             </div>
@@ -151,14 +152,14 @@ export default function Achievements() {
                 </div>
             </section>
 
-            {/* Event Modal */}
+            {/* EVENT MODAL */}
             {isEventModalOpen && selectedEvent && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={closeEventModal}>
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={closeEventModal}>
                     <div className="relative bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
 
                         <button
                             onClick={closeEventModal}
-                            className="absolute top-4 right-4 bg-white text-gray-800 w-10 h-10 rounded-full shadow-md flex items-center justify-center"
+                            className="absolute top-4 right-4 bg-white w-10 h-10 rounded-full shadow flex items-center justify-center"
                         >
                             ✕
                         </button>
@@ -171,23 +172,23 @@ export default function Achievements() {
                                 className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                            <div className="absolute bottom-0 p-8">
-                                <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider text-white">
+                            <div className="absolute bottom-0 p-6">
+                                <h2 className="text-3xl font-extrabold uppercase tracking-wider text-white">
                                     {selectedEvent.name}
                                 </h2>
                             </div>
                         </div>
 
                         <div className="p-8">
-                            <p className="text-gray-600 leading-relaxed mb-8">
+                            <p className="text-gray-600 mb-8">
                                 {selectedEvent.description}
                             </p>
 
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                {selectedEvent.images.map((image) => (
+                                {selectedEvent.images.map((image, index) => (
                                     <div
                                         key={image.id}
-                                        onClick={() => openImageModal(image, selectedEvent.name)}
+                                        onClick={() => openImageModal(index, selectedEvent.images)}
                                         className="relative h-40 cursor-pointer overflow-hidden rounded-lg"
                                     >
                                         <Image
@@ -199,6 +200,53 @@ export default function Achievements() {
                                     </div>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* IMAGE VIEWER MODAL */}
+            {isImageModalOpen && selectedImageIndex !== null && (
+                <div
+                    className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95"
+                    onClick={closeImageModal}
+                >
+                    <div
+                        className="relative max-w-6xl w-full h-[90vh] flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={closeImageModal}
+                            className="absolute top-6 right-6 bg-white w-10 h-10 rounded-full flex items-center justify-center"
+                        >
+                            ✕
+                        </button>
+
+                        <button
+                            onClick={showPrevImage}
+                            className="absolute left-6 text-white text-5xl font-bold"
+                        >
+                            ‹
+                        </button>
+
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={currentImages[selectedImageIndex].src}
+                                alt={currentImages[selectedImageIndex].alt}
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+
+                        <button
+                            onClick={showNextImage}
+                            className="absolute right-6 text-white text-5xl font-bold"
+                        >
+                            ›
+                        </button>
+
+                        <div className="absolute bottom-6 text-white text-sm">
+                            {selectedImageIndex + 1} / {currentImages.length}
                         </div>
                     </div>
                 </div>
