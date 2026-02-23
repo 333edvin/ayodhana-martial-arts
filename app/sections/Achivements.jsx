@@ -199,7 +199,7 @@ export default function Achievements() {
                         </div>
 
                         <div className="p-8">
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-4">
+                           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-4">
                                 About this event
                             </h2>
                             <p className="text-gray-600 mb-8">
