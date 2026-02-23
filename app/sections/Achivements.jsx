@@ -199,6 +199,9 @@ export default function Achievements() {
                         </div>
 
                         <div className="p-8">
+                            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4">
+                                About this event
+                            </h2>
                             <p className="text-gray-600 mb-8">
                                 {selectedEvent.description}
                             </p>
