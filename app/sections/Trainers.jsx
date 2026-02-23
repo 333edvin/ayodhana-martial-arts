@@ -200,7 +200,7 @@ export default function Trainers() {
         </p>
 
         {/* Instagram (UNCHANGED) */}
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <a
             href="https://www.instagram.com/shihan_sreejith/"
             target="_blank"
@@ -221,7 +221,7 @@ export default function Trainers() {
             </svg>
             Instagram
           </a>
-        </div>
+        </div> */}
 
       </div>
     </div>
