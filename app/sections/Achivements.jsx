@@ -7,9 +7,9 @@ const events = [
     {
         id: 1,
         name: 'Oxford Professional Championship – 2025',
-        shortDescription: 'FL Muay Thai Professional Title Belt – Abhishek CR',
+        shortDescription: 'Oxford Professional Championship 2025 Title Belt Champion – Abhishek CR',
         description:
-            'Abhishek CR emerged victorious at the Oxford Professional Championship 2025, claiming the prestigious FL Muay Thai Professional Title Belt.',
+            'Abhishek CR delivered an outstanding performance at the Oxford Professional Championship 2025, securing the prestigious Title Belt through skill, determination, and relentless spirit.',
         mainImage: '/assets/images/oxford_championship/event1-7.jpg',
         images: [
             { id: 1, src: '/assets/images/oxford_championship/event1-7.jpg', alt: 'Championship Celebration' },
