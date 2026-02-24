@@ -3,7 +3,7 @@ import "./globals.css";
 import SplashWrapper from "./SplashWrapper";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-geist-sans", 
   subsets: ["latin"],
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SplashWrapper>
-        {children}
+          {children}
         </SplashWrapper>
       </body>
     </html>
