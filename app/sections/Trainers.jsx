@@ -78,24 +78,24 @@ export default function Trainers() {
     },
    
     
-    {
-      id: 7,
-      name: "Adarsh Ns",
-      role: "Assistant Coach",
-      description: "3 years experience helping students master fundamental techniques and physical conditioning.",
-      image: "assets/images/trainer8.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/_adarshhhh_ns/", twitter: "#" },
-      featured: false
-    },
-    {
-      id: 8,
-      name: "Adithyan pv",
-      role: "Assistant Coach",
-      description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
-      image: "assets/images/trainer4.jpeg",
-      socials: { facebook: "#", instagram: "https://www.instagram.com/aadh7thyann/", twitter: "#" },
-      featured: true
-    },
+    // {
+    //   id: 7,
+    //   name: "Adarsh Ns",
+    //   role: "Assistant Coach",
+    //   description: "3 years experience helping students master fundamental techniques and physical conditioning.",
+    //   image: "assets/images/trainer8.jpeg",
+    //   socials: { facebook: "#", instagram: "https://www.instagram.com/_adarshhhh_ns/", twitter: "#" },
+    //   featured: false
+    // },
+    // {
+    //   id: 8,
+    //   name: "Adithyan pv",
+    //   role: "Assistant Coach",
+    //   description: "3 years experience focusing on student form, discipline, and foundational martial arts skills.",
+    //   image: "assets/images/trainer4.jpeg",
+    //   socials: { facebook: "#", instagram: "https://www.instagram.com/aadh7thyann/", twitter: "#" },
+    //   featured: true
+    // },
   ];
   
   const handleCardClick = (id) => {
@@ -126,14 +126,14 @@ export default function Trainers() {
   };
 
   return (
-    <section className="trainers px-4 sm:px-6 lg:px-8 xl:px-10 py-16" id="trainers">
+    <section className="trainers px-5 sm:px-6 lg:px-8 xl:px-10 py-6 md:py-16" id="trainers">
       <div className="mx-auto">
   
         {/* Founder Section - Separate container without min-h-screen */}
         <div className="relative w-full mb-16 overflow-hidden">
           {/* 🔥 CARD WRAPPER */}
-          <div className="relative flex items-center justify-center px-6" style={{ zIndex: 5 }}>
-            <div className="relative w-full max-w-6xl rounded-3xl p-10 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+          <div className="relative flex items-center justify-center " style={{ zIndex: 5 }}>
+            <div className="relative w-full max-w-6xl rounded-3xl p-6 md:p-16 shadow-2xl bg-black/90 flex flex-col md:flex-row items-center gap-12 backdrop-blur-sm transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
               
               {/* Border */}
               <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none"></div>
@@ -193,7 +193,7 @@ export default function Trainers() {
               
               {/* Founder Info */}
               <div className="text-center md:text-left">
-                <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-white transition-all duration-300 hover:text-red-500">
+                <h3 className="text-[2rem] md:text-5xl font-bold uppercase tracking-wide text-white transition-all duration-300 hover:text-red-500">
                   Shihan Sreejith
                 </h3>
                 <p className="text-red-500 font-semibold mt-4 text-base md:text-lg uppercase tracking-wider">
@@ -247,7 +247,7 @@ export default function Trainers() {
           </h2>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-[360px] md:w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 w-[360px] md:w-6xl">
             {trainers.map((trainer) => (
               <div 
                 key={trainer.id} 

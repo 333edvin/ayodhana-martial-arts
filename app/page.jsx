@@ -7,6 +7,7 @@ import Achivements from "./sections/Achivements";
 import Founder from "./sections/Founder";
 import Activities from "./sections/Activities";
 import Testimonials from "./sections/Testimonials";
+import BestPerformers from "./sections/BestPerformer";
 
 export default function Home() {
 
@@ -27,6 +28,8 @@ export default function Home() {
           <Achivements />
           {/* Trainers Section */}
           <Trainers />
+          {/* best performer  */}
+          <BestPerformers />
           {/* Schedule Section */}
           <Schedule />
           {/* Testimonials Section */}
