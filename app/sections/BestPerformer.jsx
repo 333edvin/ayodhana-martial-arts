@@ -125,7 +125,7 @@ function BadgesArc({ achievements }) {
               {a.year}
             </p>
             <p className="text-red-500 text-[.8rem] font-semibold uppercase tracking-wide whitespace-nowrap leading-tight text-center">
-              {a.level}
+              {a.level} <br /> Examination
             </p>
           </div>
         );
