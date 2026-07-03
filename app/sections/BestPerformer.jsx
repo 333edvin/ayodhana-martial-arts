@@ -1,6 +1,7 @@
 import Image from "next/image";
 import performerone from "../../public/assets/pngs/performerone.png";
 import performertwo from "../../public/assets/pngs/performertwo.png";
+import performerthree from "../../public/assets/pngs/performerthree.png";
 import badge from "../../public/assets/pngs/best-performer.png";
 
 
@@ -21,6 +22,13 @@ const performers = [
       { badge: badge, level: "Fourth Level", year: "2025" },
     ],
   },
+  {
+    name: "Arun ps",
+    image: performerthree,
+    achievements: [
+      { badge: badge, level: "Fifth Level", year: "2026" },
+    ],
+  },
 ];
 
 export default function BestPerformers() {
@@ -30,7 +38,7 @@ export default function BestPerformers() {
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-red-900/20 blur-3xl rounded-full pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-6xl mx-auto">
 
         {/* Header */}
         <div className="text-center ">
@@ -45,7 +53,7 @@ export default function BestPerformers() {
         </div>
 
         {/* Two-column grid — stacks on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#1a1a1a]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:w-6xl  mx-auto divide-y sm:divide-y-0 sm:divide-x divide-[#1a1a1a]">
           {performers.map((performer, pi) => (
             <div key={pi} className="flex flex-col items-center px-4 sm:px-8 pt-8  ">
 
