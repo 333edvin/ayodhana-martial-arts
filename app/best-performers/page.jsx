@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import performerone from "../../public/assets/pngs/performerone.png";
 import performertwo from "../../public/assets/pngs/performertwo.png";
+import performerthree from "../../public/assets/pngs/performerthree.png";
 import badge from "../../public/assets/pngs/best-performer.png";
 
 const performers = [
@@ -21,34 +22,59 @@ const performers = [
       { badge: badge, level: "Fourth Level", year: "2025" },
     ],
   },
+  {
+    name: "Arun ps",
+    image: performerthree,
+    achievements: [
+      { badge: badge, level: "Fifth Level", year: "2026" },
+    ],
+  },
 ];
 
-export default function BestPerformersSection() {
-  // Slicing to guarantee only the first 2 performers show on the home page
-  const displayedPerformers = performers.slice(0, 2);
-
+export default function page() {
   return (
-    <section className="relative py-16 px-4 bg-[#080808] text-white overflow-hidden">
+    <main className="relative min-h-screen py-16 px-4 bg-[#080808] text-white overflow-hidden">
+      
       {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-red-900/20 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-900/15 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto flex flex-col items-center">
+      <div className="relative max-w-6xl mx-auto mt-14 md:mt-10">
+        
+        {/* Back to Home Navigation */}
+        <div className=" absolute -top-10 md:top-10 -left-5 md:left-0 w-full flex justify-start items-center px-4 sm:px-0">
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-gray-400 hover:text-red-500 transition-colors duration-200 uppercase"
+          >
+            <svg 
+              className="w-4 h-4" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-0 md:mb-16">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-red-500 mb-3">
             Hall of Excellence
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Best Performers</h2>
-          <div className="w-10 h-[2px] bg-red-600 mx-auto mb-4" />
-          <p className="text-gray-400 text-sm max-w-xs mx-auto leading-relaxed">
-            Recognising outstanding achievement across all examination levels
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">Best Performers</h1>
+          <div className="w-12 h-[2px] bg-red-600 mx-auto mb-4" />
+          <p className="text-gray-400 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
+            Recognising outstanding achievement across all examination levels throughout our history
           </p>
         </div>
 
-        {/* Two-column grid — centered & balanced for 2 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl w-full mx-auto divide-y sm:divide-y-0 sm:divide-x divide-[#1a1a1a] mb-12">
-          {displayedPerformers.map((performer, pi) => (
-            <div key={pi} className="flex flex-col items-center px-4 sm:px-8 pt-8">
+        {/* Responsive Grid - 3 Columns on larger screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto divide-y sm:divide-y-0 sm:divide-x divide-[#1a1a1a]">
+          {performers.map((performer, pi) => (
+            <div key={pi} className="flex flex-col items-center px-4 sm:px-8 pt-8 pb-12 sm:pb-4">
+
               {/* Performer Image */}
               <div className="relative w-72 sm:w-72 h-auto">
                 <Image
@@ -57,7 +83,7 @@ export default function BestPerformersSection() {
                   className="w-full h-full object-contain object-bottom"
                 />
                 {/* Bottom fade */}
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#080808] to-transparent" />
               </div>
 
               {/* Name */}
@@ -72,17 +98,8 @@ export default function BestPerformersSection() {
           ))}
         </div>
 
-        {/* Action Button */}
-        <div className="text-center z-10">
-          <Link
-            href="/best-performers"
-            className="inline-block px-8 py-3 text-xs font-bold tracking-widest text-white uppercase bg-red-600 hover:bg-red-700 active:scale-95 transition-all duration-200 rounded-sm shadow-lg shadow-red-900/20"
-          >
-            View All Performers
-          </Link>
-        </div>
       </div>
-    </section>
+    </main>
   );
 }
 

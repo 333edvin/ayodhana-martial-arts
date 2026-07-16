@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SplashWrapper from "./SplashWrapper";
+import Layouts from "./containers/Layouts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans", 
@@ -34,9 +35,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Layouts>
         <SplashWrapper>
           {children}
         </SplashWrapper>
+        </Layouts>
       </body>
     </html>
   );

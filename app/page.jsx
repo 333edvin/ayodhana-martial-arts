@@ -13,7 +13,6 @@ export default function Home() {
 
   return (
     <>
-      <Layouts>
 
         <div>
           {/* Hero Section */}
@@ -37,7 +36,6 @@ export default function Home() {
           {/* Admin Panel (Hidden by default) */}
         </div>
 
-      </Layouts>
     </>
 
   )

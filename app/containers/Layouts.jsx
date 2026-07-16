@@ -24,7 +24,7 @@ export default function Layouts({ children }) {
     return (
         <>
             <header className="fixed top-0 z-40 w-full border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
-                <div className="container mx-auto flex h-auto py-5 items-center justify-between px-3">
+                <div className="container mx-auto flex h-auto py-2 md:py-5 items-center justify-between px-3">
                     {/* LOGO */}
                     <a 
                     href="https://www.ayodhanafighters.in/" 
